@@ -174,9 +174,10 @@ body {
 	width: 430px;
 	height: 344.18px;
 	left: 650px;
-	top: 40px;
+	top: 50px;
 	background: rgba(255, 255, 255, 0.68);
 	border-radius: 40px;
+	padding: 20px;
 }
 
 .order-count-container{
@@ -216,3 +217,4 @@ body {
 	text-align: center;
 	color: #272727;
 }
+

@@ -4,6 +4,8 @@ import user from "../Images/user.png";
 import Sidebar from "./sideBar";
 import logout from "../Images/logout.png";
 import medicine from "../Images/welcome_image.png";
+import  Calendar from 'react-calendar';
+import "../calendar.css"
 
 function Home() {
     const [empName] = useState("Nilaksha");
@@ -22,10 +24,12 @@ function Home() {
         <p className="welcome-name">Hello {empName}</p> 
         <p className="welcome-desc">may every step you make be filled with happiness</p>   
      </div>
-     <div className="calender-container"></div>
+     <div className="calender-container">
+         <Calendar/>
+     </div>
      <div className="order-count-container">
-     <p className="order-count-title">Orders</p>
-     <p className="order-count">{orderCount}</p>          
+        <p className="order-count-title">Orders</p>
+        <p className="order-count">{orderCount}</p>          
      </div>
 </div>
        
