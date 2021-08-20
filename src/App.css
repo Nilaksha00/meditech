@@ -139,6 +139,16 @@ body {
 	top: 83px;
 }
 
+.welcome-med-shadow{
+	position: absolute;
+	width: 200px;
+	height: 8px;
+	left: 40px;
+	top: 290px;
+	background: rgba(0, 0, 0, 0.35);
+	filter: blur(19.6385px);
+}
+
 .welcome-name{
 	position: absolute;
 	width: 178px;
@@ -176,8 +186,8 @@ body {
 	left: 650px;
 	top: 50px;
 	background: rgba(255, 255, 255, 0.68);
-	border-radius: 40px;
-	padding: 20px;
+	border-radius: 30px;	
+	padding: 10px;
 }
 
 .order-count-container{

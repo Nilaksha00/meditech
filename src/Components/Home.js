@@ -4,6 +4,7 @@ import user from "../Images/user.png";
 import Sidebar from "./sideBar";
 import logout from "../Images/logout.png";
 import medicine from "../Images/welcome_image.png";
+import ellipse from "../Images/ellipse.png"
 import  Calendar from 'react-calendar';
 import "../calendar.css"
 
@@ -20,7 +21,8 @@ function Home() {
         <img src={logout} className='logout' alt="logout-icon" />       
     </div>
      <div className='welcomeMessageContainer'>
-        <img src={medicine} className='welcome-med' alt="meditech-welcome-message-image"/> 
+        <img src={medicine} className='welcome-med' alt="meditech-welcome-message-image"/>        
+        <img src={ellipse} className='welcome-med-shadow' alt="meditech-welcome-message-image-shadow"/> 
         <p className="welcome-name">Hello {empName}</p> 
         <p className="welcome-desc">may every step you make be filled with happiness</p>   
      </div>

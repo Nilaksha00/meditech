@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
 .react-calendar {
     max-width: 100%; 
-    line-height: 1.125em;
+    line-height: 1.1em;
+    font-family: 'Poppins', sans-serif;
   }
   .react-calendar--doubleView {
     width: 800px;
@@ -20,6 +23,7 @@
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
   }
   .react-calendar button {
     margin: 0;
@@ -39,6 +43,7 @@
   }
   .react-calendar__navigation button:enabled:hover {
     background-color: #4d97fb;
+    border-radius: 15px;
   }
  
   .react-calendar__month-view__weekdays {
@@ -67,7 +72,7 @@
   .react-calendar__year-view .react-calendar__tile,
   .react-calendar__decade-view .react-calendar__tile,
   .react-calendar__century-view .react-calendar__tile {
-    padding: 2em;
+    padding: 1.5em;
   }
   .react-calendar__tile {
     max-width: 100%;
@@ -77,14 +82,18 @@
   }
   .react-calendar__tile:disabled {
     background-color: #4d97fb;
+    border-radius: 15px;
   }
   .react-calendar__tile:enabled:hover {
-    background-color: #4d97fb;
+    background-color: #4d97fb; 
+    border-radius: 15px;
   }
   .react-calendar__tile--now {
     background: #4d97fb;
+    border-radius: 15px;
   }
   .react-calendar__tile--now:enabled:hover {
-    background: #4d97fb;
+    background: #4d97fb; 
+    border-radius: 15px;
   }
   
