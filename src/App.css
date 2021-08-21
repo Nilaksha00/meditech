@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
 .App {
 	width: 100vw;
 	height: 100vh;
@@ -125,10 +127,10 @@ body {
 	position: absolute;
 	width: 330px;
 	height: 480px;
-	left: 283px;
+	left: 280px;
 	top: 40px;
 	background: rgba(255, 255, 255, 0.68);
-	border-radius: 40px;
+	border-radius: 30px;
 }
 
 .welcome-med{
@@ -143,7 +145,7 @@ body {
 	position: absolute;
 	width: 200px;
 	height: 8px;
-	left: 40px;
+	left: 50px;
 	top: 290px;
 	background: rgba(0, 0, 0, 0.35);
 	filter: blur(19.6385px);
@@ -155,7 +157,7 @@ body {
 	height: 36px;
 	left: 76px;
 	top: 322px;
-	font-family: Poppins;
+	font-family: 'Poppins', sans-serif;
 	font-style: normal;
 	font-weight: 500;
 	font-size: 24px;
@@ -184,7 +186,7 @@ body {
 	width: 430px;
 	height: 344.18px;
 	left: 650px;
-	top: 50px;
+	top: 40px;
 	background: rgba(255, 255, 255, 0.68);
 	border-radius: 30px;	
 	padding: 10px;
@@ -204,9 +206,9 @@ body {
 	position: absolute;
 	left: 176px;
     top: 20px;
-	font-family: Poppins;
+	font-family: 'Poppins', sans-serif;
 	font-style: normal;
-	font-weight: normal;
+	font-weight: 500;
 	font-size: 25px;
 	line-height: 37px;
 	text-align: center;
@@ -217,14 +219,39 @@ body {
 	position: absolute;
 	width: 51.6px;
 	height: 22.7px;
-	left: 189px;
-	top: 56px;
+	left: 195px;
+	top: 54px;
 	font-family: Poppins;
 	font-style: normal;
-	font-weight: 500;
-	font-size: 30px;
+	font-weight: normal;
+	font-size: 27px;
 	line-height: 45px;
 	text-align: center;
 	color: #272727;
 }
+
+.content-container{
+	position: absolute;
+	width: 800px;
+	height: 479px;
+	left: 280px;
+	top: 40px;
+	background: rgba(255, 255, 255, 0.68);
+	border-radius: 30px; 
+}
+
+.page-title{
+	position: absolute;
+	width: 189px;
+	height: 83px;
+	left: 37px;
+	top: 37px;
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 55px;
+	line-height: 82px;
+	color: #125465;
+}
+
 

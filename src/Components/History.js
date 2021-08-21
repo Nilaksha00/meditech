@@ -5,22 +5,22 @@ import user from "../Images/user.png";
 import Sidebar from "./sideBar";
 import logout from "../Images/logout.png";
 
-function Order() {
+function History() {
 	return (
 		<div className='MainContainer'>
 			<div className='containermini'>
 				<img src={logo} className='logo' alt="meditech-logo" />
-				<Link to="/home">                 
+                <Link to="/home">                 
                     <img src={user} className='user' alt="meditech-user-profile-icon"/>
                 </Link>	
-				<Sidebar />
+                <Sidebar />
 				<img src={logout} className='logout' alt="logout-icon" />
 			</div>
             <div className="content-container">
-                <p className="page-title">Orders</p>
+                <p className="page-title">History</p>
             </div>
 		</div>
 	);
 }
 
-export default Order;
+export default History;
