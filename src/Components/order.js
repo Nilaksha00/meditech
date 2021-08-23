@@ -4,6 +4,8 @@ import logo from "../Images/logo.png";
 import user from "../Images/user.png";
 import Sidebar from "./sideBar";
 import logout from "../Images/logout.png";
+import SearchBar from "./SearchBar"
+import TableLayout from "./TableLayout"
 
 function Order() {
 	return (
@@ -18,7 +20,9 @@ function Order() {
 			</div>
             <div className="content-container">
                 <p className="page-title">Orders</p>
-            </div>
+				< SearchBar/>
+				<TableLayout/>
+            </div>	
 		</div>
 	);
 }
