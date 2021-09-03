@@ -1,11 +1,13 @@
 import React from "react";
+import "../App.css"
 import { Link } from "react-router-dom";
 import logo from "../Images/logo.png";
 import user from "../Images/user.png";
 import Sidebar from "./sideBar";
 import logout from "../Images/logout.png";
 import SearchBar from "./SearchBar"
-import TableLayout from "./TableLayout"
+import OrdersList from "./OrdersList"
+
 
 function Order() {
 	return (
@@ -21,10 +23,13 @@ function Order() {
             <div className="content-container">
                 <p className="page-title">Orders</p>
 				< SearchBar/>
-				<TableLayout/>
+				<OrdersList/>
             </div>	
 		</div>
 	);
 }
 
 export default Order;
+
+
+  

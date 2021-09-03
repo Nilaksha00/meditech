@@ -35,8 +35,8 @@ class Home extends Component{
                     <img src={logout} className='logout' alt="logout-icon" />       
                 </div>
                 <div className='welcomeMessageContainer'>
-                    <img src={medicine} className='welcome-med' alt="meditech-welcome-message-image"/>        
-                    <img src={ellipse} className='welcome-med-shadow' alt="meditech-welcome-message-image-shadow"/> 
+                    <img src={medicine} className='welcome-med' alt="meditech-welcome-message"/>        
+                    <img src={ellipse} className='welcome-med-shadow' alt="meditech-welcome-message-shadow"/> 
                     { this.state.dashboard.map(empName => <p className="welcome-name">Hello  {empName.name}</p>)}
                     <p className="welcome-desc">may every step you make be filled with happiness</p>   
                 </div>

@@ -280,26 +280,131 @@ body {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-	width: 90%;
+	width: 92%;
 	font-family: Poppins;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 17px;
 	margin-left: auto;
 	margin-right: auto;
-
-	margin-top: 180px;
+	max-height: 300px;
+	margin-top: 160px;
   }
   
-  th, td {
-	text-align: left;
-	padding: 8px;
+ td {
+	border: 10px;
+	padding-top: 25px;
+	padding-left:20px;
 	font-weight: normal;
+	width: 100px;
+	color: rgb(0, 0, 0);
   }
 
   th{
-	  color: #125465;
 	font-weight: 500;
-	text-align: center;
+	color: #125465;
+  }
+
+  .id{
+	  padding-left: 17px;
+  }
+
+  .nic{
+	padding-left: 80px;
+}
+
+.res{
+	padding-left: 68px;
+}
+
+.stat{
+	padding-left: 58px;
+}
+
+.action{
+	padding-left: 110px;
+}
+  
+  thead>tr {
+	position: relative;
+	display: inline-block;
   }
   
+  ::-webkit-scrollbar {
+	width: 7px;
+	color: #272727;
+  }
+
+  ::-webkit-scrollbar-thumb {
+	background:#125465; 	
+	border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+	background: #0c3d49; 
+  }
+
+  .table-container{
+	margin-top: 10px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	height: 265px;  
+	overflow-x: scroll;
+	text-decoration: none;
+	color: black;
+  }
+
+  .circle {
+	display: flex;
+	width: 12px;
+	height: 12px;
+	margin-left: 30px;
+	border-radius: 50%;
+  }
+
+  .status-container{
+	padding-left: 10px;
+	width: 130px;
+	height: 28px;
+	border-radius: 12px;
+  }
+
+  .status-dropdown{
+	padding-left: 10px;
+	width: 130px;
+	height: 28px;
+	border-radius: 12px;
+	border:none;
+	font-family: "Poppins", sans-serif;
+	font-weight: normal;
+	font-size: 17px;
+  }
+
+  .order-button{
+	background-color: #0464FC;
+	font-family: "Poppins", sans-serif;
+	font-weight: normal;
+	font-size: 17px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-left: 10px;
+	height: 28px;
+	border-radius: 12px;
+	border: none;
+	cursor: pointer;
+  }
+
+  .order-button:hover{
+	background-color: #054fc7;
+	font-family: "Poppins", sans-serif;
+	font-weight: normal;
+	font-size: 17px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-left: 10px;
+	height: 28px;
+	border-radius: 12px;
+	border: none;
+	cursor: pointer;
+  }
