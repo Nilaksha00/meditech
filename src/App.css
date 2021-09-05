@@ -408,3 +408,29 @@ table {
 	border: none;
 	cursor: pointer;
   }
+
+  .invoice-main-container{
+	position: absolute;
+	margin: auto;
+	width: 750px;
+	height: 900px;
+	right: 80px;
+	left: 80px;
+	top: 80px;
+	background: rgba(255, 255, 255, 0.51);
+	border-radius: 30px;
+  }
+
+.create-invoice-title{
+	position: absolute;
+	width: 100%;
+    left: auto;
+    top: 40px;
+	font-family: 'Poppins', sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 37px;
+	line-height: 36px;
+	text-align: center;
+	color: #125465;
+}

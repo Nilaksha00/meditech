@@ -5,7 +5,9 @@ import home from "./Components/Home";
 import stock from "./Components/Stock";
 import invoice from "./Components/Invoice";
 import history from "./Components/History";
+import Create_Invoice from "./Components/Create_Invoice";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 
 function App() {
 	return (
@@ -20,6 +22,7 @@ function App() {
 					<Route path='/history' component={history} />
 					<Route path='/leaves' component={MainContainer} />
 					<Route path='/salary' component={MainContainer} />
+					<Route path='/create-invoice' component={Create_Invoice} />
 				</Switch>
 			</div>
 		</Router>
