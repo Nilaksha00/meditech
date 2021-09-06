@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import back from "../Images/back.png"
-import add from "../Images/add_icon.png"
-import cancel from "../Images/cancel-icon.png"
+import InvoiceMedList from "./Create_Invoice_Med_List"
 
 class Create_Invoice extends Component{
 
@@ -21,13 +20,15 @@ class Create_Invoice extends Component{
                 <p className="invoice-medicine-form-title">Medicine</p>
                 <p className="invoice-quantity-form-title">Quantity</p>
             
-                <form>
+                {/* <InvoiceMedForm/> */}
+                <InvoiceMedList/>
+                {/* <form>
                 <input type="text" className="invoice-medicine-form" id="med_name" ></input>
                 <input type="text" className="invoice-quantity-form" id="med_qty" ></input>
                 
                 <input type="image" src={add} className="add-icon" alt="meditech-add-icon"/>
-                </form>
-                <div className="invoice-medicine-list-container">
+                </form> */}
+                {/* <div className="invoice-medicine-list-container">
                 <div className="invoice-medicine-list-scroll">
                     <table>
                         <tr className="invoice-medicine-list">
@@ -38,7 +39,7 @@ class Create_Invoice extends Component{
                         
                     </table>
                 </div>
-                </div>
+                </div> */}
                 <button type="submit" className="invoice-submit-button">submit</button>
             </div>
 
