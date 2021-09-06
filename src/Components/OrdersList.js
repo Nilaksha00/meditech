@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import axios from 'axios'; 
 
 const Order = props =>(
-    
-    <tr><div>
+    <div>
+    <tr>
     <Link to="/home" style={{ textDecoration: "none" }}>
     <td>{props.ord.id}</td>
     <td> {props.ord.NIC}</td>
@@ -39,7 +39,7 @@ const Order = props =>(
     <td style={{ display:'flex' }}>
     <Link to="/invoice" style={{ textDecoration: "none" }}><button className="order-button">view</button></Link>
     <Link to="/home" style={{ textDecoration: "none" }}><button className="order-button">proceed</button></Link></td>
-    </div> </tr>
+    </tr></div> 
    
 )
 
@@ -67,7 +67,7 @@ export default class OrdersList extends Component {
     
     render() {
     return (       
-        <table>    
+        <table className="order-table">    
             <thead>
              <tr>
                 <th className="id">order ID</th>
