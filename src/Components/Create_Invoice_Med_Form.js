@@ -1,58 +1,73 @@
-import React,{useState} from 'react'
+import React, {Component} from 'react'
 import add from "../Images/add_icon.png"
 
-function InvoiceMedForm(props) {
-    const [state, setState] = useState({
-        name: "",
-        qty:null
-    });
 
-    const handleChangeName = e => {
-        setState({
+export default class  InvoiceMedForm extends Component {
+    
+    constructor(props){
+        super(props);
+
+        this.handleChangeName = this.handleChangeName.bind(this);
+        this.handleChangeQty = this.handleChangeQty.bind(this);
+        this.handleAdd = this.handleAdd.bind(this);
+
+        this.state ={
+            name: "",
+            qty:null
+        }
+    }
+
+    handleChangeName = e => {
+         this.setState({
             name:e.target.value
         });
     };
 
-    const handleChangeQty = e => {
-        setState({
+    handleChangeQty = e => {
+        this.setState({
             qty:e.target.value
         });
     };
 
-    const handleAdd = e => {
+    handleAdd = e => {
         e.preventDefault();
 
-        props.onClick({
-            medName: state.name,
-            medQty:state.qty
-        });
-
-        setState({
+        this.setState({
             name:"",
             qty:""
         });
+
+        console.log('Form submited');
+        console.log(this.state.name)
+        console.log(this.state.qty);
+    
+    
+        this.props.onClick({
+             medName: this.state.name,
+             medQty:this.state.qty
+        });
     };
 
-    return (
-        <form >
-            <input 
+    render(){
+        return (
+            <form >
+             <input 
                 type="text" 
                 className="invoice-medicine-form" 
-                value={state.name} 
+                value={this.state.name} 
                 name="medName" 
-                onChange={handleChangeName}
+                onChange={this.handleChangeName}
             />
             <input 
                 type="number" 
                 className="invoice-quantity-form" 
-                value={state.qty} 
-                name="medName" 
-                onChange={handleChangeQty}
+                value={this.state.qty} 
+                name="medQty" 
+                onChange={this.handleChangeQty}
             />
             
-            <input type="image" src={add} className="add-icon" alt="meditech-add-icon" onClick={handleAdd}/>
+            <input type="image" src={add} className="add-icon" alt="meditech-add-icon" onClick={this.handleAdd}/>
         </form>
     )
-}
+}}
 
-export default InvoiceMedForm

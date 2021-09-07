@@ -4,28 +4,33 @@ import cancel from "../Images/cancel-icon.png"
 
 function Create_Invoice_Med_List() {
     const {meds, setMed}= useState([]);
+        
+    const removeMed = name => {
+        const removedArr = [...meds].filter(med => med.name !== name);
+    
+        setMed(removedArr);
+      };
+      
+    function addMed(med) {
 
-    const addMed = med => {
-
-        if(!med.name || /^\s*$/.test(med.name)){
+        if(!med.medName || /^\s*$/.test(med.medName)){
              return
         }
-        const newMed = [med,...meds];
-
-        setMed(newMed);
-        console.log(med,...meds);
+        setMed([med,...meds]);
+        console.log(meds);
     }
 
-    return (
+    return(
         <div>
-        <MedForm onClick={addMed}/>
+        <MedForm
+        onClick={addMed}/>  
         <div className="invoice-medicine-list-container">
         <div className="invoice-medicine-list-scroll">
             <table>
                 <tr className="invoice-medicine-list">
-                    <td className="invoice-medicine-list-name" ><p >Panadol</p></td>
-                    <td className="invoice-medicine-list-qty"><p>28</p></td>
-                    <td><input type="image" src={cancel} className="cancel-icon" alt="meditech-cancel-icon"/></td>
+                    <td className="invoice-medicine-list-name" ><p >{meds}</p></td>
+                    {/* <td className="invoice-medicine-list-qty"><p>{meds}</p></td> */}
+                    <td><input type="image" src={cancel} className="cancel-icon" alt="meditech-cancel-icon" onClick={()=> removeMed(meds.medName)}/></td>
                 </tr>
                 
             </table>
