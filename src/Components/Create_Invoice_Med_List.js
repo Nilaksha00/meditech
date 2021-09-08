@@ -1,38 +1,27 @@
-import React, {useState} from 'react'
-import MedForm from './Create_Invoice_Med_Form'
+import React from 'react'
 import cancel from "../Images/cancel-icon.png"
 
-function Create_Invoice_Med_List() {
-    const {meds, setMed}= useState([]);
-        
-    const removeMed = name => {
-        const removedArr = [...meds].filter(med => med.name !== name);
-    
-        setMed(removedArr);
-      };
-      
-    function addMed(med) {
+function Create_Invoice_Med_List(props) {
 
-        if(!med.medName || /^\s*$/.test(med.medName)){
-             return
-        }
-        setMed([med,...meds]);
-        console.log(meds);
-    }
+   const items = props.items;
+   const listItems = items.map(items =>{
+        return(
+            <tr  key={items.name} className="invoice-medicine-list">
+                <td className="invoice-medicine-list-name"><p >{items.name}</p></td>
+                <td className="invoice-medicine-list-qty"><p>{items.qty}</p></td>
+                <td className="invoice-medicine-list-price"><p>{items.price}</p></td>
+                <td>
+                <input type="image" src={cancel} className="cancel-icon" alt="meditech-cancel-icon" onClick = { () => props.deleteItem(items.name)}/></td>
+            </tr>
+        )
+   })
 
     return(
-        <div>
-        <MedForm
-        onClick={addMed}/>  
+        <div> 
         <div className="invoice-medicine-list-container">
         <div className="invoice-medicine-list-scroll">
             <table>
-                <tr className="invoice-medicine-list">
-                    <td className="invoice-medicine-list-name" ><p >{meds}</p></td>
-                    {/* <td className="invoice-medicine-list-qty"><p>{meds}</p></td> */}
-                    <td><input type="image" src={cancel} className="cancel-icon" alt="meditech-cancel-icon" onClick={()=> removeMed(meds.medName)}/></td>
-                </tr>
-                
+                {listItems}               
             </table>
         </div>
         </div>

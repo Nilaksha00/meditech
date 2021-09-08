@@ -1,4 +1,3 @@
-
 import React, {Component, useState} from 'react'
 import { Link } from "react-router-dom";
 import axios from './axios'; 
@@ -28,7 +27,7 @@ const Order = (props) =>{
         axios.post("/orders",data);
     }
     return(
-        <div>
+        <div className="search-bar-container">
         <tr>
         <Link to="/home" style={{ textDecoration: "none" }}>
         <td>{props.ord.id}</td>
@@ -61,7 +60,7 @@ const Order = (props) =>{
             )} 
         </>
         <td style={{ display:'flex' }}>
-        <Link to="/invoice" style={{ textDecoration: "none" }}><button className="order-button">view</button></Link>
+        <Link to="/view-order" style={{ textDecoration: "none" }}><button className="order-button">view</button></Link>
         <Link to="/home" style={{ textDecoration: "none" }}><button className="order-button">proceed</button></Link></td>
         </tr></div> 
     
@@ -76,7 +75,7 @@ export default class OrdersList extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:3082/order/')
+        axios.get('http://localhost:3083/order/')
         .then(response => {
             this.setState({order: response.data})
         }).catch(function (error){
@@ -104,5 +103,7 @@ export default class OrdersList extends Component {
              </thead><div className="table-container"> 
                 {this.orderList()}
             </div></table>)}} 
+
+
 
 

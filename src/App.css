@@ -341,6 +341,7 @@ thead > tr {
 ::-webkit-scrollbar-thumb {
   background: #125465;
   border-radius: 10px;
+  outline: none;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -480,6 +481,20 @@ thead > tr {
   color: #125465;
 }
 
+.invoice-details-id{
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  top: 55px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 37px;
+  text-align: center;
+  color: #125465;
+}
+
 .invoice-medicine-form-title {
   position: absolute;
   left: 40px;
@@ -495,7 +510,20 @@ thead > tr {
 
 .invoice-quantity-form-title {
   position: absolute;
-  left: 460px;
+  left: 395px;
+  top: 290px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 36px;
+  text-align: center;
+  color: #125465;
+}
+
+.invoice-price-form-title {
+  position: absolute;
+  left: 510px;
   top: 290px;
   font-family: "Poppins", sans-serif;
   font-style: normal;
@@ -507,9 +535,9 @@ thead > tr {
 }
 
 .invoice-medicine-form {
-  padding-left: 35px;
+  padding-left: 15px;
   position: absolute;
-  width: 370px;
+  width: 340px;
   height: 35px;
   left: 40px;
   top: 328px;
@@ -523,11 +551,27 @@ thead > tr {
 }
 
 .invoice-quantity-form {
-  padding-left: 35px;
+  padding-left: 15px;
   position: absolute;
-  width: 120px;
+  width: 100px;
   height: 35px;
-  left: 460px;
+  left: 395px;
+  top: 328px;
+  outline: none;
+  border: none;
+  border-radius: 15px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+}
+
+.invoice-price-form {
+  padding-left: 15px;
+  position: absolute;
+  width: 100px;
+  height: 35px;
+  left: 510px;
   top: 328px;
   outline: none;
   border: none;
@@ -573,13 +617,17 @@ thead > tr {
 }
 
 .invoice-medicine-list-name {
-  width: 350px;
+  width: 360px;
 }
 
 .invoice-medicine-list-qty {
-  width: 150px;
+  width: 80px;
 }
 
+.invoice-medicine-list-price {
+  width: 80px;
+  
+}
 .cancel-icon {
   padding-top: 5px;
   width: 20px;
@@ -596,6 +644,65 @@ thead > tr {
   padding-right: 10px;
   margin-left: 40px;
   margin-top: 760px;
+  height: 30px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.order-view-desc{
+  width: 620px;
+  height: 100px;
+  margin-left:40px;
+  margin-top:330px;
+  padding: 12px 20px;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.51);
+  border-radius: 30px;
+  border:0px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  resize: none;
+}
+
+.prescription-image{
+  height: 350px;
+  margin: auto;
+  width: fit-content;
+}
+
+.prescription-image-container{
+  height: 350px;
+  width: fit-content;
+  margin: 20px 210px ;
+}
+
+
+.pre-main-container {
+  position: absolute;
+  margin: auto;
+  width: 700px;
+  height: 900px;
+  right: 80px;
+  left: 80px;
+  top: 40px;
+  background: rgba(255, 255, 255, 0.51);
+  border-radius: 30px;
+}
+
+.pre-submit-button{
+  width: 620px;
+  background-color: #0464fc;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  font-size: 17px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 40px;
+  margin-top: 20px;
   height: 30px;
   border-radius: 12px;
   border: none;

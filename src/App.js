@@ -6,7 +6,7 @@ import stock from "./Components/Stock";
 import invoice from "./Components/Invoice";
 import history from "./Components/History";
 import Create_Invoice from "./Components/Create_Invoice";
-import Create_Invoice_Med_Form from "./Components/Create_Invoice_Med_Form";
+import vieworder from './Components/View_Order';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 
@@ -24,7 +24,7 @@ function App() {
 					<Route path='/leaves' component={MainContainer} />
 					<Route path='/salary' component={MainContainer} />
 					<Route path='/create-invoice' component={Create_Invoice} />
-					<Route path='/create-invoice-form' component={Create_Invoice_Med_Form} />
+					<Route path='/view-order' component={vieworder} />
 				</Switch>
 			</div>
 		</Router>
