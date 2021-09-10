@@ -650,6 +650,39 @@ thead > tr {
   cursor: pointer;
 }
 
+.invoice-submit-button:hover {
+  width: 620px;
+  background-color: #125465;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  font-size: 17px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 40px;
+  margin-top: 760px;
+  height: 30px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+
+.invoice-submit-button:disabled {
+  width: 620px;
+  background-color: #125465;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  font-size: 17px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 40px;
+  margin-top: 760px;
+  height: 30px;
+  border-radius: 12px;
+  border: none;
+  cursor:default;
+}
+
 .order-view-desc{
   width: 620px;
   height: 100px;
@@ -707,4 +740,61 @@ thead > tr {
   border-radius: 12px;
   border: none;
   cursor: pointer;
+}
+
+.pre-submit-button:hover{
+  width: 620px;
+  background-color:#125465;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  font-size: 17px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 40px;
+  margin-top: 20px;
+  height: 30px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.invoice-table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 92%;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  margin-left: 20px;
+  margin-right: auto;
+  max-height: 300px;
+  margin-top: 160px;
+}
+
+.invoice-table td {
+  border: 10px;
+  padding-top: 25px;
+  padding-left: 25px;
+  padding-right: 38px;
+  font-weight: normal;
+  width: 92px;
+  color: rgb(0, 0, 0);
+}
+
+
+.iid {
+  padding-left: 10px;
+}
+
+.inic {
+  padding-left: 92px;
+}
+
+.iamount {
+  padding-left: 100px;
+}
+
+.iaction {
+  padding-left: 145px;
 }

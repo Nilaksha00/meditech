@@ -1,6 +1,7 @@
 import React, {Component} from "react";
+import { Link} from "react-router-dom";
 import back from "../Images/back.png"
-import InvoiceMedList from "./Create_Invoice_Med_List"
+import InvoiceMedList from "./Create_Invoice_Med_List.js"
 import add from "../Images/add_icon.png"
 import axios from './axios';
 
@@ -13,8 +14,14 @@ class Create_Invoice extends Component{
         this.handleChangePrice = this.handleChangePrice.bind(this);
         this.handleAdd = this.handleAdd.bind(this);
         this.deleteItem = this.deleteItem.bind(this);
+        
+        const iid = Math.floor(Math.random() * 1000);
 
         this.state ={
+            isButtonDisabled: false,
+            iid:iid,
+            id:'',
+            NIC:'',
             items:[],
             currentItem:{
                 name: "",
@@ -23,6 +30,19 @@ class Create_Invoice extends Component{
                 total:0
             }
         }
+    }
+
+    componentDidMount() {
+        const id=this.props.match.params.id;
+        axios.get('http://localhost:3083/order/' + id)
+        .then(response => {
+                this.setState({
+                    id:response.data.id,
+                    NIC:response.data.NIC,
+                })
+        }).catch(function (error){
+            console.log(error);
+        })
     }
 
     //handles changes in text fields
@@ -60,14 +80,13 @@ class Create_Invoice extends Component{
             const newItems=[...this.state.items, newItem];
             this.setState({
                 items:newItems,
+                disable:"false"
             });
         };    
 
-        const id = Math.floor(Math.random() * 1000);
-
         const medItem = {
-            id: Math.floor(Math.random() * 10000),
-            invoiceID: id,
+            id: Math.floor(Math.random() * 1000),
+            invoiceID: this.state.iid,
             med_name:this.state.name,
             quantity:this.state.qty,
             total:this.state.qty * this.state.price
@@ -81,6 +100,7 @@ class Create_Invoice extends Component{
                 qty:"",
                 price:""
             })
+            
     }
 
     //handles deleting items
@@ -96,30 +116,34 @@ class Create_Invoice extends Component{
         e.preventDefault();
     
         const invoice = {
-            id: Math.floor(Math.random() * 10000),
-            NIC:2009032,
-            invoiceID: 77,
-            order_id:23,
-            amount:78,
-        }      
-
+            id:this.state.iid,
+            NIC:this.state.NIC,
+            order_id:this.state.id,
+            amount:0,
+        }     
+        
         axios.post('/invoice', invoice)
         .then(res => console.log(res.data))
+
+        this.setState({
+            isButtonDisabled: true
+          });
     }
 
+    
     render(){    
         return (
         <div style={{height: "950px"}}>
             <div className="invoice-main-container">
-            <input type="image" src={back} className="back-icon" alt="meditech-back-icon"/>                           
+            <Link to ="/invoice"><input type="image" src={back} className="back-icon" alt="meditech-back-icon"/></Link>
                 <p className="create-invoice-title">Create Invoice</p>
                 <div className="invoice-details-container1">
                     <p className="invoice-details-title">Order ID</p>  
-                    <p className="invoice-details-id">{Math.floor(Math.random() * 10000)}</p>     
+                    <p className="invoice-details-id">{ this.state.id }</p>     
                 </div>
                 <div className="invoice-details-container2">
                     <p className="invoice-details-title">Amount</p> 
-                    <p className="invoice-details-id">{Math.floor(Math.random() * 10000)}</p>  
+                    <p className="invoice-details-id">{/*this.state.iid*/}-</p>  
                 </div>
                 
                 <p className="invoice-medicine-form-title">medicine</p>
@@ -156,7 +180,7 @@ class Create_Invoice extends Component{
                     items = {this.state.items}
                     deleteItem = {this.deleteItem}
                 />
-                <button type="submit" className="invoice-submit-button" onClick={this.submitInvoice}>submit</button>
+                <button className="invoice-submit-button" disabled={this.state.isButtonDisabled} onClick={this.submitInvoice}>submit</button>
             </div>
         </div>
     )}

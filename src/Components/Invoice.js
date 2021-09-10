@@ -3,6 +3,8 @@ import logo from "../Images/logo.png";
 import user from "../Images/user.png";
 import Sidebar from "./sideBar";
 import logout from "../Images/logout.png";
+import SearchBar from "./SearchBar"
+import InvoiceList from "./InvoiceList"
 import { Link } from "react-router-dom";
 
 function Invoice() {
@@ -18,7 +20,10 @@ function Invoice() {
 			</div>
             <div className="content-container">
                 <p className="page-title">Invoice</p>
+				< SearchBar/>
+				<InvoiceList/>
             </div>
+			
 		</div>
 	);
 }

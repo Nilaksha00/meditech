@@ -17,18 +17,19 @@ const Order = (props) =>{
         } else {
             e.target.style.backgroundColor = "#F5FA09";
         }
-
     }
 
     const callBackend = () =>{
         let data = {
-            response: responce,
+            id:props.ord.id,
+            response: responce
         }
-        axios.post("/orders",data);
+        axios.patch('/order/update', data).then(console.log("heyyy"))      
     }
+
     return(
-        <div className="search-bar-container">
-        <tr>
+        
+        <tr key={props.ord.id}>
         <Link to="/home" style={{ textDecoration: "none" }}>
         <td>{props.ord.id}</td>
         <td> {props.ord.NIC}</td>
@@ -60,13 +61,12 @@ const Order = (props) =>{
             )} 
         </>
         <td style={{ display:'flex' }}>
-        <Link to="/view-order" style={{ textDecoration: "none" }}><button className="order-button">view</button></Link>
+        <Link to={"/view-order"+props.ord.id} style={{ textDecoration: "none" }}><button className="order-button" >view</button></Link>
         <Link to="/home" style={{ textDecoration: "none" }}><button className="order-button">proceed</button></Link></td>
-        </tr></div> 
-    
+        </tr>
+
     )
 }
-
 
 export default class OrdersList extends Component {     
     constructor(props) {
@@ -82,11 +82,11 @@ export default class OrdersList extends Component {
             console.log(error);
         })
     }
-
+   
     orderList(){
         return this.state.order.map(function(currentOrder, i){
-            return <Order ord={currentOrder} key={i}/>
-        });
+        return <Order ord={currentOrder} key={i}/>
+        });   
     }
     
     render() {
@@ -100,8 +100,11 @@ export default class OrdersList extends Component {
                  <th className="stat">status</th>
                  <th className="action">actions</th>
              </tr>
-             </thead><div className="table-container"> 
-                {this.orderList()}
+             </thead>
+             <div className="table-container"> 
+             <div className="search-bar-container">
+                {this.orderList()} 
+                </div>
             </div></table>)}} 
 
 

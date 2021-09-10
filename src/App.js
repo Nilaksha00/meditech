@@ -23,8 +23,8 @@ function App() {
 					<Route path='/history' component={history} />
 					<Route path='/leaves' component={MainContainer} />
 					<Route path='/salary' component={MainContainer} />
-					<Route path='/create-invoice' component={Create_Invoice} />
-					<Route path='/view-order' component={vieworder} />
+					<Route path='/create-invoice:id' component={Create_Invoice} />
+					<Route path='/view-order:id' component={vieworder} />
 				</Switch>
 			</div>
 		</Router>
