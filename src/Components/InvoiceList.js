@@ -12,8 +12,8 @@ const Invoice = (props) =>{
         <td> {props.inv.amount}</td>      
         <td style={{ display:'flex' }}>
             <Link to={"/view-invoice"+props.inv.id} style={{ textDecoration: "none" }}><button className="order-button" >view</button></Link>
-            <Link to={"/update-invoice"+props.inv.id} style={{ textDecoration: "none" }}><button className="order-button">update</button></Link>
-            <button className="order-button" onCLick={}>delete</button>
+            <Link to={"/update-invoice/"+props.inv.id} style={{ textDecoration: "none" }}><button className="order-button">update</button></Link>
+            <Link to={"/delete-invoice"+props.inv.id} style={{ textDecoration: "none" }}><button className="order-button" >delete</button></Link>
         </td>
         </tr>
     )

@@ -886,3 +886,50 @@ thead > tr {
   /* text-align: left;
   margin-left: 65px; */
 }
+
+.delete-invoice-container {
+  position: absolute;
+  margin: auto;
+  width: 1120px;
+  height: 630px;
+  right: 80px;
+  left: 80px;
+  top: 80px;
+  bottom: 80px;
+  background: rgba(255, 255, 255, 0.51);
+  border-radius: 40px;
+}
+
+.invoice-delete-button{
+  width: 1040px;
+  height: 25px;
+  background-color: #0464fc;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  font-size: 17px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 40px;
+  margin-top: 30px;
+  height: 30px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.invoice-delete-button:hover{
+  width: 1040px;
+  height: 25px;
+  background-color: #125465;
+  font-family: "Poppins", sans-serif;
+  font-weight: normal;
+  font-size: 17px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 40px;
+  margin-top: 30px;
+  height: 30px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+}
