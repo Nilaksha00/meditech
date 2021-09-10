@@ -7,6 +7,7 @@ import invoice from "./Components/Invoice";
 import history from "./Components/History";
 import Create_Invoice from "./Components/Create_Invoice";
 import vieworder from './Components/View_Order';
+import viewinvoice from './Components/View_Invoice';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 
@@ -25,6 +26,7 @@ function App() {
 					<Route path='/salary' component={MainContainer} />
 					<Route path='/create-invoice:id' component={Create_Invoice} />
 					<Route path='/view-order:id' component={vieworder} />
+					<Route path='/view-invoice:id' component={viewinvoice} />
 				</Switch>
 			</div>
 		</Router>

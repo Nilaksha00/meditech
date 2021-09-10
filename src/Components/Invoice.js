@@ -6,8 +6,10 @@ import logout from "../Images/logout.png";
 import SearchBar from "./SearchBar"
 import InvoiceList from "./InvoiceList"
 import { Link } from "react-router-dom";
+import axios from './axios'; 
 
 function Invoice() {
+
 	return (
 		<div className='MainContainer'>
 			<div className='containermini'>

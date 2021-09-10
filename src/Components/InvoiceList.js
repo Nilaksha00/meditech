@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from './axios'; 
 
 const Invoice = (props) =>{
-
+    const id = props.inv.id;
     return(
         
         <tr key={props.inv.id}>
@@ -11,14 +11,14 @@ const Invoice = (props) =>{
         <td> {props.inv.NIC}</td>
         <td> {props.inv.amount}</td>      
         <td style={{ display:'flex' }}>
-        <Link to={"/view-invoice"+props.inv.id} style={{ textDecoration: "none" }}><button className="order-button" >view</button></Link>
-        <Link to={"/update-invoice"+props.inv.id} style={{ textDecoration: "none" }}><button className="order-button">update</button></Link>
-        <Link to={"/delete-invoice"+props.inv.id} style={{ textDecoration: "none" }}><button className="order-button">delete</button></Link></td>
+            <Link to={"/view-invoice"+props.inv.id} style={{ textDecoration: "none" }}><button className="order-button" >view</button></Link>
+            <Link to={"/update-invoice"+props.inv.id} style={{ textDecoration: "none" }}><button className="order-button">update</button></Link>
+            <button className="order-button" onCLick={}>delete</button>
+        </td>
         </tr>
-
     )
 }
-
+//axios.delete('http://localhost:3083/invoice/')
 export default class InvoiceList extends Component {     
     constructor(props) {
         super(props);
@@ -39,7 +39,7 @@ export default class InvoiceList extends Component {
         return <Invoice inv={currentInvoice} key={i}/>
         });   
     }
-    
+
     render() {
     return (       
         <table className="invoice-table">    
