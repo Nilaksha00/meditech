@@ -23,6 +23,7 @@ class Create_Invoice extends Component{
             id:'',
             NIC:'',
             items:[],
+            tot:'',
             currentItem:{
                 name: "",
                 qty:null,
@@ -75,6 +76,7 @@ class Create_Invoice extends Component{
     handleAdd = e => {      
         e.preventDefault();
 
+        //add item to the below list
         const newItem = this.state.currentItem;
         if(newItem.name!==""){
             const newItems=[...this.state.items, newItem];
@@ -82,7 +84,12 @@ class Create_Invoice extends Component{
                 items:newItems,
                 disable:"false"
             });
-        };    
+        };  
+        
+        //calculate and display total amount
+        let tot = 0;
+        tot = tot + this.state.total;                         
+        this.setState({tot:tot})
 
         const medItem = {
             id: Math.floor(Math.random() * 1000),
@@ -90,8 +97,9 @@ class Create_Invoice extends Component{
             med_name:this.state.name,
             quantity:this.state.qty,
             total:this.state.qty * this.state.price
-        }      
-
+        }     
+        
+        //backend
         axios.post('/invoice/med', medItem)
         .then(res => console.log(res.data))
 
@@ -105,12 +113,29 @@ class Create_Invoice extends Component{
 
     //handles deleting items
     deleteItem(name){
-      const filteredItems = this.state.items.filter(item => item.name !== name);
+        const del = {
+          med_name:name,
+          invoiceID:this.state.iid
+        }
+        console.log(del)
+        axios.delete('/invoice/med', del)
+        .then(res => console.log("res.data")).catch("error:error")
+        
+        const filteredItems = this.state.items.filter(item => item.name !== name);
 
         this.setState({
            items:filteredItems 
         })
     };
+
+    
+    medTot(){
+        let tot = 0;
+        this.state.items.map(function(currentMed, i){
+            tot = tot + currentMed.total;                         
+        });
+        return tot;       
+    }
  
     submitInvoice = e => {      
         e.preventDefault();
@@ -119,9 +144,9 @@ class Create_Invoice extends Component{
             id:this.state.iid,
             NIC:this.state.NIC,
             order_id:this.state.id,
-            amount:0,
+            amount:this.medTot()
         }     
-        
+    
         axios.post('/invoice', invoice)
         .then(res => console.log(res.data))
 
@@ -142,8 +167,12 @@ class Create_Invoice extends Component{
                     <p className="invoice-details-id">{ this.state.id }</p>     
                 </div>
                 <div className="invoice-details-container2">
+                    <p className="invoice-details-title">Invoice ID</p> 
+                    <p className="invoice-details-id">{this.state.iid}</p>  
+                </div>
+                <div className="invoice-details-container3">
                     <p className="invoice-details-title">Amount</p> 
-                    <p className="invoice-details-id">{/*this.state.iid*/}-</p>  
+                    <p className="invoice-details-id">{this.medTot()}</p>  
                 </div>
                 
                 <p className="invoice-medicine-form-title">medicine</p>

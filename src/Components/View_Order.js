@@ -1,4 +1,4 @@
-import React, {Component, useState} from 'react'
+import React, {Component} from 'react'
 import { Link} from "react-router-dom";
 import back from "../Images/back.png"
 import pre from "../Images/sample_prescription.jpg"
@@ -38,21 +38,21 @@ render(){
             <div className="pre-main-container">
                 <input type="image" src={back} className="back-icon" alt="meditech-back-icon"/>                           
                 <p className="create-invoice-title">Prescription</p>
-                <div className="invoice-details-container1">
+                <div className="order-details-container1">
                     <p className="invoice-details-title">Order ID</p>  
                     <p className="invoice-details-id">{ id }</p>     
                 </div>
-                <div className="invoice-details-container2">
+                <div className="order-details-container2">
                     <p className="invoice-details-title">NIC</p> 
                     <p className="invoice-details-id">{this.state.NIC}</p>  
                 </div>
 
                 <p className="invoice-medicine-form-title">description</p>
-                <textarea className="order-view-desc" value="need medicines for 2 months" readOnly value={this.state.description}/>
+                <textarea className="order-view-desc"  value={this.state.description}/>
 
                 <div className="prescription-image-container"><img className="prescription-image" src={pre} alt="sample prescription"/></div>
             
-                <Link to={'/create-invoice'+this.state.id}><button className="pre-submit-button">create invoice</button></Link>
+                <Link to={'/create-invoice/'+this.state.id}><button className="pre-submit-button">create invoice</button></Link>
             </div>
         </div>
     )

@@ -1,4 +1,4 @@
-import React, {Component, useState} from 'react'
+import React, {Component} from 'react'
 import { Link} from "react-router-dom";
 import back from "../Images/back.png"
 import axios from './axios'; 
@@ -72,7 +72,7 @@ export default class Delete_Invoice extends Component {
                <Link to ="/invoice"><input type="image" src={back} className="back-icon" alt="meditech-back-icon"/></Link>
                 <p className="create-invoice-title">Invoice</p>
 
-                <div class="flex-container-invoice-details" style={{ marginTop: "80px" }}>
+                <div class="flex-container-invoice-details" style={{ marginTop: "20px" }}>
                     <div>
                         <p className="view-invoice-details-title">order ID</p>  
                         <p className="view-invoice-details-id">{this.state.oid}</p>     

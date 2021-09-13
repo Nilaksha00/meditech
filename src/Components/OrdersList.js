@@ -6,10 +6,17 @@ const Order = (props) =>{
 
     const [responce, setResponce] = useState();
 
-    const handleResponce = (e) => {
+    const handleResponce = (e) => {        
+
         let value = e.target.value;
         setResponce(e.target.value);
-
+        
+        let data = {
+            id:props.ord.id,
+            response: responce
+        }
+        axios.patch('/order/update', data).then(console.log("heyyy")).catch(console.log("yo"))      
+    
         if(value === "unavailable"){
             e.target.style.backgroundColor = "red";
         } else if(value === "pending"){
@@ -19,13 +26,13 @@ const Order = (props) =>{
         }
     }
 
-    const callBackend = () =>{
-        let data = {
-            id:props.ord.id,
-            response: responce
-        }
-        axios.patch('/order/update', data).then(console.log("heyyy"))      
-    }
+    // const callBackend = () =>{
+    //     let data = {
+    //         id:props.ord.id,
+    //         response: responce
+    //     }
+    //     axios.patch('/order/update', data).then(console.log("heyyy")).catch(console.log("yo"))      
+    // }
 
     return(
         
@@ -61,7 +68,7 @@ const Order = (props) =>{
             )} 
         </>
         <td style={{ display:'flex' }}>
-        <Link to={"/view-order"+props.ord.id} style={{ textDecoration: "none" }}><button className="order-button" >view</button></Link>
+        <Link to={"/view-order/"+props.ord.id} style={{ textDecoration: "none" }}><button className="order-button" >view</button></Link>
         <Link to="/home" style={{ textDecoration: "none" }}><button className="order-button">proceed</button></Link></td>
         </tr>
 
@@ -81,7 +88,7 @@ export default class OrdersList extends Component {
         }).catch(function (error){
             console.log(error);
         })
-    }
+        }   
    
     orderList(){
         return this.state.order.map(function(currentOrder, i){

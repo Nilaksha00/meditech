@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom";
-import axios from "axios";
+import axios from "./axios";
 import logo from "../Images/logo.png";
 import user from "../Images/user.png";
 import Sidebar from "./sideBar";
@@ -12,15 +12,25 @@ import "../calendar.css"
 
 class Home extends Component{
     state = {
-        dashboard: []
+        order:[]
       }
     
     componentDidMount() {
-        axios.get("https://jsonplaceholder.typicode.com/users?id=2")
-          .then(res => {
-            const dashboard = res.data;
-            this.setState({ dashboard });
-          })
+
+        axios.get('http://localhost:3083/order/')
+        .then(response => {
+            this.setState({order: response.data})
+        }).catch(function (error){
+            console.log(error);
+        })
+    }
+
+    orderCount(){
+        let count = 0;
+        this.state.order.map(function(currentOrder, i){
+            count = count + 1;                         
+        });  
+        return count;
     }
     
     render(){ 
@@ -37,7 +47,7 @@ class Home extends Component{
                 <div className='welcomeMessageContainer'>
                     <img src={medicine} className='welcome-med' alt="meditech-welcome-message"/>        
                     <img src={ellipse} className='welcome-med-shadow' alt="meditech-welcome-message-shadow"/> 
-                    { this.state.dashboard.map(empName => <p className="welcome-name">Hello  {empName.name}</p>)}
+                    <p className="welcome-name">Hello Ervill Howell</p>
                     <p className="welcome-desc">may every step you make be filled with happiness</p>   
                 </div>
                 <div className="calender-container">
@@ -45,7 +55,7 @@ class Home extends Component{
                 </div>
                 <div className="order-count-container">
                     <p className="order-count-title">Orders</p>
-                    { this.state.dashboard.map(order => <p className="order-count">{order.id}</p>  )}        
+                    <p className="order-count">{this.orderCount()}</p>        
                 </div>
             </div>           
         )

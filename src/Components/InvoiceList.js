@@ -1,9 +1,8 @@
-import React, {Component, useState} from 'react'
+import React, {Component} from 'react'
 import { Link } from "react-router-dom";
 import axios from './axios'; 
 
 const Invoice = (props) =>{
-    const id = props.inv.id;
     return(
         
         <tr key={props.inv.id}>
@@ -11,9 +10,9 @@ const Invoice = (props) =>{
         <td> {props.inv.NIC}</td>
         <td> {props.inv.amount}</td>      
         <td style={{ display:'flex' }}>
-            <Link to={"/view-invoice"+props.inv.id} style={{ textDecoration: "none" }}><button className="order-button" >view</button></Link>
-            <Link to={"/update-invoice/"+props.inv.id} style={{ textDecoration: "none" }}><button className="order-button">update</button></Link>
-            <Link to={"/delete-invoice"+props.inv.id} style={{ textDecoration: "none" }}><button className="order-button" >delete</button></Link>
+            <Link to={"/view-invoice/"+props.inv.id} style={{ textDecoration: "none" }}><button className="order-button" >view</button></Link>
+            <Link to={"/update/"+props.inv.id} style={{ textDecoration: "none" }}><button className="order-button">update</button></Link>
+            <Link to={"/delete-invoice/"+props.inv.id} style={{ textDecoration: "none" }}><button className="order-button" >delete</button></Link>
         </td>
         </tr>
     )
@@ -55,7 +54,8 @@ export default class InvoiceList extends Component {
              <div className="search-bar-container">
                 {this.invoiceList()} 
                 </div>
-            </div></table>
+            </div>
+        </table>
         )
     }
 } 
