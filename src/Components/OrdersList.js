@@ -2,6 +2,7 @@ import React, {Component, useState} from 'react'
 import { Link } from "react-router-dom";
 import axios from './axios'; 
 
+//display order
 const Order = (props) =>{
 
     const [responce, setResponce] = useState();
@@ -11,12 +12,17 @@ const Order = (props) =>{
         let value = e.target.value;
         setResponce(e.target.value);
         
+        //change status to unavailable
         let data = {
             id:props.ord.id,
-            response: responce
+            ph_status: value
         }
-        axios.patch('/order/update', data).then(console.log("heyyy")).catch(console.log("yo"))      
+
+        axios.patch("/order/update/", data)
+        .then(console.log("Status uploaded"))
+        .catch(console.log("error"))      
     
+        //change dropdown background colour
         if(value === "unavailable"){
             e.target.style.backgroundColor = "red";
         } else if(value === "pending"){
@@ -25,14 +31,6 @@ const Order = (props) =>{
             e.target.style.backgroundColor = "#F5FA09";
         }
     }
-
-    // const callBackend = () =>{
-    //     let data = {
-    //         id:props.ord.id,
-    //         response: responce
-    //     }
-    //     axios.patch('/order/update', data).then(console.log("heyyy")).catch(console.log("yo"))      
-    // }
 
     return(
         
@@ -90,6 +88,7 @@ export default class OrdersList extends Component {
         })
         }   
    
+    //iterate and display orders
     orderList(){
         return this.state.order.map(function(currentOrder, i){
         return <Order ord={currentOrder} key={i}/>
