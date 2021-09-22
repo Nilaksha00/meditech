@@ -1,77 +1,75 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import logo from "../Images/logo.png";
 import user from "../Images/user.png";
 import Sidebar from "./sideBar";
 import logout from "../Images/logout.png";
 import SearchBar from "./SearchBar";
-import axios from './axios'; 
+import axios from "./axios";
 
-const Stocks = (props) =>{
-	return(
-        
-        <tr>
-        <td>{props.stock.id}</td>
-        <td> {props.stock.med_name}</td>
-        <td> {props.stock.bio_name}</td>      
-        <td>{props.stock.quantity}</td>
-        <td> {props.stock.selling_price}</td>
-        </tr>
-    )
-}
+const Stocks = (props) => {
+	return (
+		<tr>
+			<td>{props.stock.id}</td>
+			<td> {props.stock.med_name}</td>
+			<td> {props.stock.bio_name}</td>
+			<td>{props.stock.quantity}</td>
+			<td> {props.stock.selling_price}</td>
+		</tr>
+	);
+};
 
 export default class Stock extends Component {
 	constructor(props) {
-        super(props);
-         this.state = { stock: [] };
-    }
+		super(props);
+		this.state = { stock: [] };
+	}
 
-    componentDidMount() {
-        axios.get('http://localhost:3083/stock/')
-        .then(response => {
-            this.setState({stock: response.data})
-        }).catch(function (error){
-            console.log(error);
-        })
-    }
-   
-    stockList(){
-        return this.state.stock.map(function(currentStock, i){
-        	return <Stocks stock={currentStock} key={i}/>
-        });   
-    }
-    
-	render(){
+	componentDidMount() {
+		axios
+			.get("http://localhost:3083/stock/")
+			.then((response) => {
+				this.setState({ stock: response.data });
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
+	}
+
+	stockList() {
+		return this.state.stock.map(function (currentStock, i) {
+			return <Stocks stock={currentStock} key={i} />;
+		});
+	}
+
+	render() {
 		return (
-			<div className='MainContainer'>
-				<div className='containermini'>
-					<img src={logo} className='logo' alt="meditech-logo" />
-					<Link to="/home">                 
-						<img src={user} className='user' alt="meditech-user-profile-icon"/>
-					</Link>	
+			<div className="MainContainer">
+				<div className="containermini">
+					<img src={logo} className="logo" alt="meditech-logo" />
+					<Link to="/home">
+						<img src={user} className="user" alt="meditech-user-profile-icon" />
+					</Link>
 					<Sidebar />
-					<img src={logout} className='logout' alt="logout-icon" />
+					<img src={logout} className="logout" alt="logout-icon" />
 				</div>
 				<div className="content-container">
 					<p className="page-title">Stock</p>
-					<SearchBar/>
-					<table className="stock-table-head">    
+					<SearchBar />
+					<table className="stock-table-head">
 						<thead>
-						<tr>
-							<th>ID</th>
-							<th>bio name</th>
-							<th>medicine</th>
-							<th>quantity</th>
-							<th>unit price</th>
-						</tr>
-						</thead>						
+							<tr>
+								<th>ID</th>
+								<th>bio name</th>
+								<th>medicine</th>
+								<th>quantity</th>
+								<th>unit price</th>
+							</tr>
+						</thead>
 					</table>
-					<div className="stock-table-content">
-						{this.stockList()}
-					</div>
+					<div className="stock-table-content">{this.stockList()}</div>
 				</div>
 			</div>
 		);
 	}
 }
-
