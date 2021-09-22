@@ -8,7 +8,7 @@ const Order = (props) =>{
     const [responce, setResponce] = useState();
 
     const handleResponce = (e) => {        
-
+        
         let value = e.target.value;
         setResponce(e.target.value);
         
@@ -30,6 +30,7 @@ const Order = (props) =>{
         } else {
             e.target.style.backgroundColor = "#F5FA09";
         }
+        window.location.reload(false);
     }
 
     return(

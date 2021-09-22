@@ -93,7 +93,7 @@ export default class Delete_Invoice extends Component {
                     </div>
                 </div>
 
-                <div class="flex-container-med-details"> 
+                <div class="flex-container-med-details-delete"> 
                     <div class="view-invoice-med-details">
                         <div><p>medicine</p></div><div/> 
                         <div><p>quantity</p></div> 

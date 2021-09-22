@@ -336,21 +336,26 @@ thead > tr {
   display: inline-block;
 }
 
+/* width */
 ::-webkit-scrollbar {
-  width: 7px;
-  color: #272727;
+	width: 10px;
 }
 
+/* Track */
+::-webkit-scrollbar-track {
+	background: none;
+}
+
+/* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #125465;
-  border-radius: 10px;
-  outline: none;
+	background: #77a6e4;
+	border-radius: 76px;
 }
 
+/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #0c3d49;
+	background: #555;
 }
-
 .table-container {
   margin-top: 10px;
   width: 100%;
@@ -873,16 +878,23 @@ thead > tr {
 
 .flex-container-med-details {
   margin-left: 40px;
-  margin-top: 20px;
+  margin-top: 0px;
   text-align: center;
   line-height: 75px;
   font-size: 30px;
   width: 93%;
-  height: 220px;
+  height: 170px;
   background-color: rgba(255, 255, 255, 0.48);
   border-radius: 30px;
+}  
+
+
+.flex-container-med-details-inner{
+  width: 100%;
   overflow-y: scroll;
+  height: 150px;
 }
+
 
 .view-invoice-med-details {
   display: flex;
@@ -892,6 +904,8 @@ thead > tr {
 .view-invoice-med-details > div {
   border: 10px;
   padding-left: 20px;
+  margin-left:100px;
+  margin-top:20px;
   width: 250px;
   height: 50px;
   font-family: "Poppins", sans-serif;
@@ -922,13 +936,26 @@ thead > tr {
   position: absolute;
   margin: auto;
   width: 1120px;
-  height: 630px;
+  height: 560px;
   right: 80px;
   left: 80px;
   top: 80px;
   bottom: 80px;
   background: rgba(255, 255, 255, 0.51);
   border-radius: 40px;
+}
+
+.flex-container-med-details-delete {
+  margin-left: 40px;
+  margin-top: 20px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+  width: 93%;
+  height: 180px;
+  background-color: rgba(255, 255, 255, 0.48);
+  border-radius: 30px;
+  overflow-y: scroll;
 }
 
 .invoice-delete-button {
@@ -941,7 +968,7 @@ thead > tr {
   padding-left: 10px;
   padding-right: 10px;
   margin-left: 40px;
-  margin-top: 30px;
+  margin-top: 15px;
   height: 30px;
   border-radius: 12px;
   border: none;

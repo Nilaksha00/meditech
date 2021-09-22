@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import { Link} from "react-router-dom";
-import back from "../Images/back.png"
+import back from "../Images/back.png";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import InvoiceMedList from "./Create_Invoice_Med_List.js"
 import add from "../Images/add_icon.png"
 import axios from './axios';
@@ -19,7 +21,7 @@ class Create_Invoice extends Component{
 
         this.state ={
             isButtonDisabled: false,
-            iid:iid,
+            iid:'',
             id:'',
             NIC:'',
             items:[],
@@ -39,6 +41,7 @@ class Create_Invoice extends Component{
         .then(response => {
                 this.setState({
                     id:response.data.id,
+                    iid:response.data.id,
                     NIC:response.data.NIC,
                 })
         }).catch(function (error){
@@ -92,7 +95,6 @@ class Create_Invoice extends Component{
         this.setState({tot:tot})
 
         const medItem = {
-            id: Math.floor(Math.random() * 1000),
             invoiceID: this.state.iid,
             med_name:this.state.name,
             quantity:this.state.qty,
@@ -102,25 +104,34 @@ class Create_Invoice extends Component{
         //backend
         axios.post('/invoice/med', medItem)
         .then(res => console.log(res.data))
+        .catch(function (error){
+            console.log("error");
+        })
 
         this.setState({
                 name:"",
                 qty:"",
                 price:""
-            })
-            
+            })            
+        console.log(this.state.mid)
     }
 
     //handles deleting items
-    deleteItem(name){
+    deleteItem(name){   
         const del = {
-          med_name:name,
-          invoiceID:this.state.iid
+            invoiceID:this.state.iid,
+            med_name:name
         }
-        console.log(del)
-        axios.delete('/invoice/med', del)
-        .then(res => console.log("res.data")).catch("error:error")
-        
+ 
+        axios.delete('/invoice/med/',{data:del})
+        .then(response => {
+            console.log(response.data)
+            this.setState({
+                isDisabled: true
+            });
+        }).catch(function (error){
+            console.log(error.response.data);
+        })      
         const filteredItems = this.state.items.filter(item => item.name !== name);
 
         this.setState({
@@ -146,21 +157,38 @@ class Create_Invoice extends Component{
             order_id:this.state.id,
             amount:this.medTot()
         }     
-    
-        axios.post('/invoice', invoice)
-        .then(res => console.log(res.data))
+        
+        if(this.state.tot != 0){
+            axios.post('/invoice', invoice)
+            .then(res => console.log(res.data))
+            .catch("Cannot create invoice") 
+            window.location.replace("http://localhost:3000/invoice");
+        }else{
+            toast.warning("Invoice cannot be empty");
+        }
 
         this.setState({
             isButtonDisabled: true
-          });
+          });       
     }
-
-    
+  
     render(){    
         return (
         <div style={{height: "950px"}}>
+            <ToastContainer
+                position='top-center'
+                autoClose={4000}
+                hideProgressBar={true}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                limit={1}
+                pauseOnHover
+			/>
             <div className="invoice-main-container">
-            <Link to ="/invoice"><input type="image" src={back} className="back-icon" alt="meditech-back-icon"/></Link>
+            <Link to ={"/view-order/"+this.state.id}><input type="image" src={back} className="back-icon" alt="meditech-back-icon"/></Link>
                 <p className="create-invoice-title">Create Invoice</p>
                 <div className="invoice-details-container1">
                     <p className="invoice-details-title">Order ID</p>  
@@ -209,7 +237,7 @@ class Create_Invoice extends Component{
                     items = {this.state.items}
                     deleteItem = {this.deleteItem}
                 />
-                <button className="invoice-submit-button" disabled={this.state.isButtonDisabled} onClick={this.submitInvoice}>submit</button>
+                <button className="invoice-submit-button" onClick={this.submitInvoice}>submit</button>
             </div>
         </div>
     )}

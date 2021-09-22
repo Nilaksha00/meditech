@@ -91,14 +91,15 @@ export default class View_Invoice extends Component {
                         <p className="view-invoice-details-id">{this.state.amount}</p>     
                     </div>
                 </div>
-
-                <div class="flex-container-med-details"> 
-                    <div class="view-invoice-med-details">
+                <div class="view-invoice-med-details">
                         <div><p>medicine</p></div><div/> 
                         <div><p>quantity</p></div> 
                         <div><p>total</p></div>
                     </div>
-                    {this.medList()} 
+                <div class="flex-container-med-details"> 
+                    <div className="flex-container-med-details-inner">
+                        {this.medList()} 
+                    </div>
                 </div>
             </div>
         )

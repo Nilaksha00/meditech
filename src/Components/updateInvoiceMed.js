@@ -9,17 +9,17 @@ export default class UpdateInvoiceMed extends Component {
 
         this.state = {
             id:props.medicine.id,
+            iid:props.medicine.invoiceID,
             name: props.medicine.med_name,
             qty: props.medicine.quantity,
-            price: props.medicine.total,
+            price: props.medicine.total / props.medicine.quantity,
             isDisabled: false
         }
 
         this.handleChangeName = this.handleChangeName.bind(this);
         this.handleChangeQty = this.handleChangeQty.bind(this);
         this.handleChangePrice = this.handleChangePrice.bind(this);
-        this.handleUpdate = this.handleUpdate.bind(this);        
-        this.handleDelete = this.handleDelete.bind(this);
+        this.handleUpdate = this.handleUpdate.bind(this);   
     }
 
     //handles changes in text fields
@@ -63,11 +63,15 @@ export default class UpdateInvoiceMed extends Component {
     //handles deleted records
     handleDelete = e => {
         e.preventDefault();
-        const id = this.state.id;
-
-        axios.delete('/invoice/med/'+id)
+        
+        const data = {
+            invoiceID:this.state.iid,
+            med_name:this.state.name
+        }
+        console.log(data)
+        axios.delete('invoice/med/',{data:data})
         .then(response => {
-            console.log(response.data)
+           
             this.setState({
                 isDisabled: true
             });

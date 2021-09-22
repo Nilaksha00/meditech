@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
-import { Link} from "react-router-dom";
+import {Link} from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import back from "../Images/back.png"
 import pre from "../Images/sample_prescription.jpg"
 import axios from './axios'; 
@@ -9,6 +11,7 @@ export default class View_Order extends Component {
     constructor(props) {
         super(props);
          this.state = { 
+             isAvailable:"none",
              id:'',
              NIC:'',    
              prescription:'',
@@ -28,15 +31,45 @@ export default class View_Order extends Component {
                 })
         }).catch(function (error){
             console.log(error);
-        })
+        })      
+    }
+
+    createInvoice = e => {      
+        e.preventDefault();  
+        
+        axios.get('http://localhost:3083/invoice/' + this.state.id)
+        .then(response=> this.setState({isAvailable:response.data}))
+        .catch(console.log("No invoice created"))
+      
     }
 
 render(){
     const { id } = this.props.match.params;
+
+    if(this.state.isAvailable===null){
+        this.props.history.push("/create-invoice/"+this.state.id);
+    }else if(this.state.isAvailable.id===this.state.id){  
+        toast.warning("Sorry! Invoice already created");    
+       // this.props.history.push("/invoice");
+    }
+
     return (
         <div style={{height: "950px"}}>
+            <ToastContainer
+					position='top-center'
+					autoClose={4000}
+					hideProgressBar={true}
+					newestOnTop={false}
+					closeOnClick
+					rtl={false}
+					pauseOnFocusLoss
+					draggable
+                    limit={1}
+					pauseOnHover
+			/>
+
             <div className="pre-main-container">
-                <input type="image" src={back} className="back-icon" alt="meditech-back-icon"/>                           
+                <Link to = "/order"><input type="image" src={back} className="back-icon" alt="meditech-back-icon"/></Link>                           
                 <p className="create-invoice-title">Prescription</p>
                 <div className="order-details-container1">
                     <p className="invoice-details-title">Order ID</p>  
@@ -52,7 +85,7 @@ render(){
 
                 <div className="prescription-image-container"><img className="prescription-image" src={pre} alt="sample prescription"/></div>
             
-                <Link to={'/create-invoice/'+this.state.id}><button className="pre-submit-button">create invoice</button></Link>
+                <button className="pre-submit-button" onClick={this.createInvoice}>create invoice</button>
             </div>
         </div>
     )
