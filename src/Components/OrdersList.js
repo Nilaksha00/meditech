@@ -32,9 +32,21 @@ const Order = (props) => {
 		window.location.reload(false);
 	};
 
+	const handleProceed = (e) => {
+		let data = {
+			id: props.ord.id,
+			ph_status: "processing",
+		};
+
+		axios
+			.patch("/order/update/", data)
+			.then(console.log("Status uploaded"))
+			.catch(console.log("error"));
+	};
+
 	return (
 		<tr key={props.ord.id}>
-			<Link to="/home" style={{ textDecoration: "none" }}>
+			<Link to="pharmacist/home" style={{ textDecoration: "none" }}>
 				<td>{props.ord.id}</td>
 				<td> {props.ord.NIC}</td>
 				<>
@@ -94,14 +106,14 @@ const Order = (props) => {
 			</>
 			<td style={{ display: "flex" }}>
 				<Link
-					to={"/view-order/" + props.ord.id}
+					to={"/pharmacist/order/" + props.ord.id}
 					style={{ textDecoration: "none" }}
 				>
 					<button className="order-button">view</button>
 				</Link>
-				<Link to="/home" style={{ textDecoration: "none" }}>
-					<button className="order-button">proceed</button>
-				</Link>
+				<button className="order-button" onClick={handleProceed}>
+					proceed
+				</button>
 			</td>
 		</tr>
 	);
@@ -127,20 +139,23 @@ export default class OrdersList extends Component {
 	//iterate and display orders
 	orderList() {
 		return this.state.order.map(function (currentOrder, i) {
-			return <Order ord={currentOrder} key={i} />;
+			if (currentOrder.ph_status != "processing") {
+				return <Order ord={currentOrder} key={i} />;
+			}
 		});
 	}
 
+	
 	render() {
 		return (
 			<table className="order-table">
 				<thead>
 					<tr>
-						<th className="id">order ID</th>
+						<th className="id">Order ID</th>
 						<th className="nic">NIC</th>
-						<th className="res">response</th>
-						<th className="stat">status</th>
-						<th className="action">actions</th>
+						<th className="res">Response</th>
+						<th className="stat">Status</th>
+						<th className="action">Actions</th>
 					</tr>
 				</thead>
 				<div className="table-container">

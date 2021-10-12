@@ -13,7 +13,7 @@ function Order() {
 		<div className="MainContainer">
 			<div className="containermini">
 				<img src={logo} className="logo" alt="meditech-logo" />
-				<Link to="/home">
+				<Link to="pharmacist/home">
 					<img src={user} className="user" alt="meditech-user-profile-icon" />
 				</Link>
 				<Sidebar />

@@ -1,339 +1,339 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
 .App {
-  width: 90vw;
-  height: 100vh;
-  overflow-x: unset;
+	width: 90vw;
+	height: 100vh;
+	overflow-x: unset;
 }
 
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
 }
 
 *,
 *:focus,
 *:hover {
-  outline: none;
+	outline: none;
 }
 
 body {
-  padding: 0;
-  margin: 0;
-  background-color: #4d97fb;
-  position: relative;
+	padding: 0;
+	margin: 0;
+	background-color: #4d97fb;
+	position: relative;
 }
 
 .Sidebar {
-  width: 240px;
-  margin-top: 220px;
+	width: 240px;
+	margin-top: 220px;
 }
 
 .SidebarList {
-  height: auto;
-  padding: 0;
-  width: 100%;
-  font-family: "Poppins", sans-serif;
-  list-style-type: none;
+	height: auto;
+	padding: 0;
+	width: 100%;
+	font-family: "Poppins", sans-serif;
+	list-style-type: none;
 }
 
 .SidebarList .row {
-  width: 100%;
-  height: 40px;
-  list-style-type: none;
-  margin: 0%;
-  color: #272727;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-left: 0px;
-  text-decoration: none;
+	width: 100%;
+	height: 40px;
+	list-style-type: none;
+	margin: 0%;
+	color: #272727;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-left: 0px;
+	text-decoration: none;
 }
 
 .SidebarList .row:hover {
-  cursor: pointer;
-  background-color: #f6faff;
-  border-radius: 0 30px 30px 0;
+	cursor: pointer;
+	background-color: #f6faff;
+	border-radius: 0 30px 30px 0;
 }
 
 .active-nav {
-  background-color: #f6faff;
-  border-radius: 0 30px 30px 0;
+	background-color: #f6faff;
+	border-radius: 0 30px 30px 0;
 }
 
 .SidebarList #active {
-  background-color: #f6faff;
-  border-radius: 0 30px 30px 0;
+	background-color: #f6faff;
+	border-radius: 0 30px 30px 0;
 }
 
 .MainContainer {
-  position: absolute;
-  margin: auto;
-  width: 1120px;
-  height: 560px;
-  right: 80px;
-  left: 80px;
-  top: 80px;
-  bottom: 80px;
-  background: rgba(255, 255, 255, 0.51);
-  border-radius: 40px;
+	position: absolute;
+	margin: auto;
+	width: 1120px;
+	height: 560px;
+	right: 80px;
+	left: 80px;
+	top: 80px;
+	bottom: 80px;
+	background: rgba(255, 255, 255, 0.51);
+	border-radius: 40px;
 }
 
 .SideContainer {
-  position: absolute;
-  width: 240px;
-  height: 560px;
-  right: 80px;
-  left: 124px;
-  top: 53px;
-  bottom: 80px;
-  background: rgba(255, 255, 255, 0.68);
-  backdrop-filter: blur(5px);
-  border-radius: 40px 0px 0px 40px;
+	position: absolute;
+	width: 240px;
+	height: 560px;
+	right: 80px;
+	left: 124px;
+	top: 53px;
+	bottom: 80px;
+	background: rgba(255, 255, 255, 0.68);
+	backdrop-filter: blur(5px);
+	border-radius: 40px 0px 0px 40px;
 }
 
 .containermini {
-  position: absolute;
-  width: 240px;
-  height: 560px;
-  right: 80px;
-  left: 0;
-  top: 0;
-  bottom: 80px;
-  background: rgba(255, 255, 255, 0.68);
-  backdrop-filter: blur(5px);
-  border-radius: 40px 0px 0px 40px;
+	position: absolute;
+	width: 240px;
+	height: 560px;
+	right: 80px;
+	left: 0;
+	top: 0;
+	bottom: 80px;
+	background: rgba(255, 255, 255, 0.68);
+	backdrop-filter: blur(5px);
+	border-radius: 40px 0px 0px 40px;
 }
 
 .logo {
-  position: absolute;
-  width: 155.05px;
-  height: 44px;
-  left: 42px;
-  top: 40px;
+	position: absolute;
+	width: 155.05px;
+	height: 44px;
+	left: 42px;
+	top: 40px;
 }
 
 .user {
-  position: absolute;
-  width: 104px;
-  height: 104px;
-  left: 67px;
-  top: 106px;
+	position: absolute;
+	width: 104px;
+	height: 104px;
+	left: 67px;
+	top: 106px;
 }
 
 .logout {
-  position: absolute;
-  width: 21.75px;
-  height: 27.6px;
-  left: 110px;
-  top: 520px;
+	position: absolute;
+	width: 21.75px;
+	height: 27.6px;
+	left: 110px;
+	top: 520px;
 }
 
 .welcomeMessageContainer {
-  position: absolute;
-  width: 330px;
-  height: 480px;
-  left: 280px;
-  top: 40px;
-  background: rgba(255, 255, 255, 0.68);
-  border-radius: 30px;
+	position: absolute;
+	width: 330px;
+	height: 480px;
+	left: 280px;
+	top: 40px;
+	background: rgba(255, 255, 255, 0.68);
+	border-radius: 30px;
 }
 
 .welcome-med {
-  position: absolute;
-  width: 234px;
-  height: 234px;
-  left: 48px;
-  top: 83px;
+	position: absolute;
+	width: 234px;
+	height: 234px;
+	left: 48px;
+	top: 83px;
 }
 
 .welcome-med-shadow {
-  position: absolute;
-  width: 200px;
-  height: 8px;
-  left: 50px;
-  top: 290px;
-  background: rgba(0, 0, 0, 0.35);
-  filter: blur(19.6385px);
+	position: absolute;
+	width: 200px;
+	height: 8px;
+	left: 50px;
+	top: 290px;
+	background: rgba(0, 0, 0, 0.35);
+	filter: blur(19.6385px);
 }
 
 .welcome-name {
-  position: absolute;
-  width: 100%;
-  left: auto;
-  top: 322px;
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 36px;
-  text-align: center;
-  color: #125465;
+	position: absolute;
+	width: 100%;
+	left: auto;
+	top: 322px;
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 36px;
+	text-align: center;
+	color: #125465;
 }
 
 .welcome-desc {
-  position: absolute;
-  width: 268px;
-  height: 52px;
-  left: 31px;
-  top: 380px;
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 17px;
-  line-height: 25px;
-  text-align: center;
-  color: #272727;
+	position: absolute;
+	width: 268px;
+	height: 52px;
+	left: 31px;
+	top: 380px;
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 17px;
+	line-height: 25px;
+	text-align: center;
+	color: #272727;
 }
 
 .calender-container {
-  position: absolute;
-  width: 430px;
-  height: 344.18px;
-  left: 650px;
-  top: 40px;
-  background: rgba(255, 255, 255, 0.68);
-  border-radius: 30px;
-  padding: 10px;
+	position: absolute;
+	width: 430px;
+	height: 344.18px;
+	left: 650px;
+	top: 40px;
+	background: rgba(255, 255, 255, 0.68);
+	border-radius: 30px;
+	padding: 10px;
 }
 
 .order-count-container {
-  position: absolute;
-  width: 430px;
-  height: 116px;
-  left: 650px;
-  top: 404px;
-  background: rgba(255, 255, 255, 0.68);
-  border-radius: 30px;
+	position: absolute;
+	width: 430px;
+	height: 116px;
+	left: 650px;
+	top: 404px;
+	background: rgba(255, 255, 255, 0.68);
+	border-radius: 30px;
 }
 
 .order-count-title {
-  position: absolute;
-  left: 176px;
-  top: 20px;
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 25px;
-  line-height: 37px;
-  text-align: center;
-  color: #125465;
+	position: absolute;
+	left: 176px;
+	top: 20px;
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 25px;
+	line-height: 37px;
+	text-align: center;
+	color: #125465;
 }
 
 .order-count {
-  position: absolute;
-  width: 51.6px;
-  height: 22.7px;
-  left: 195px;
-  top: 54px;
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 27px;
-  line-height: 45px;
-  text-align: center;
-  color: #272727;
+	position: absolute;
+	width: 51.6px;
+	height: 22.7px;
+	left: 195px;
+	top: 54px;
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 27px;
+	line-height: 45px;
+	text-align: center;
+	color: #272727;
 }
 
 .content-container {
-  position: absolute;
-  width: 800px;
-  height: 479px;
-  left: 280px;
-  top: 40px;
-  background: rgba(255, 255, 255, 0.68);
-  border-radius: 30px;
+	position: absolute;
+	width: 800px;
+	height: 479px;
+	left: 280px;
+	top: 40px;
+	background: rgba(255, 255, 255, 0.68);
+	border-radius: 30px;
 }
 
 .page-title {
-  position: absolute;
-  width: 189px;
-  height: 83px;
-  left: 37px;
-  top: 37px;
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 55px;
-  line-height: 82px;
-  color: #125465;
+	position: absolute;
+	width: 189px;
+	height: 83px;
+	left: 37px;
+	top: 37px;
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 55px;
+	line-height: 82px;
+	color: #125465;
 }
 
 .search {
-  width: 100%;
-  position: center;
-  display: flex;
-  border-radius: 40px;
-  background-color: white;
+	width: 100%;
+	position: center;
+	display: flex;
+	border-radius: 40px;
+	background-color: white;
 }
 
 .searchTerm {
-  padding-left: 35px;
-  position: absolute;
-  width: 262px;
-  height: 39px;
-  left: 504px;
-  top: 98px;
-  outline: none;
-  border: none;
-  border-radius: 40px;
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 15px;
+	padding-left: 35px;
+	position: absolute;
+	width: 232px;
+	height: 32px;
+	left: 504px;
+	top: 101px;
+	outline: none;
+	border: none;
+	border-radius: 15px;
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
 }
 
 .order-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 92%;
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 17px;
-  margin-left: auto;
-  margin-right: auto;
-  max-height: 300px;
-  margin-top: 160px;
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 92%;
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 17px;
+	margin-left: auto;
+	margin-right: auto;
+	max-height: 300px;
+	margin-top: 160px;
 }
 
 .order-table td {
-  border: 10px;
-  padding-top: 25px;
-  padding-left: 20px;
-  font-weight: normal;
-  width: 100px;
-  color: rgb(0, 0, 0);
+	border: 10px;
+	padding-top: 25px;
+	padding-left: 20px;
+	font-weight: normal;
+	width: 100px;
+	color: rgb(0, 0, 0);
 }
 
 th {
-  font-weight: 500;
-  color: #125465;
+	font-weight: 500;
+	color: #125465;
 }
 
 .id {
-  padding-left: 17px;
+	padding-left: 17px;
 }
 
 .nic {
-  padding-left: 80px;
+	padding-left: 80px;
 }
 
 .res {
-  padding-left: 68px;
+	padding-left: 68px;
 }
 
 .stat {
-  padding-left: 58px;
+	padding-left: 58px;
 }
 
 .action {
-  padding-left: 110px;
+	padding-left: 110px;
 }
 
 thead > tr {
-  position: relative;
-  display: inline-block;
+	position: relative;
+	display: inline-block;
 }
 
 /* width */
@@ -357,739 +357,998 @@ thead > tr {
 	background: #555;
 }
 .table-container {
-  margin-top: 10px;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  height: 265px;
-  overflow-y: scroll;
-  text-decoration: none;
-  color: black;
+	margin-top: 10px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	height: 265px;
+	overflow-y: scroll;
+	text-decoration: none;
+	color: black;
 }
 
 .circle {
-  display: flex;
-  width: 12px;
-  height: 12px;
-  margin-left: 30px;
-  border-radius: 50%;
+	display: flex;
+	width: 12px;
+	height: 12px;
+	margin-left: 30px;
+	border-radius: 50%;
 }
 
 .status-container {
-  padding-left: 10px;
-  width: 130px;
-  height: 28px;
-  padding-top: 2px;
-  border-radius: 12px;
+	padding-left: 10px;
+	width: 130px;
+	height: 28px;
+	padding-top: 2px;
+	border-radius: 12px;
 }
 
 .status-dropdown {
-  padding-left: 10px;
-  width: 130px;
-  height: 28px;
-  border-radius: 12px;
-  border: none;
-  font-family: "Poppins", sans-serif;
-  font-weight: normal;
-  font-size: 17px;
+	padding-left: 10px;
+	width: 130px;
+	height: 28px;
+	border-radius: 12px;
+	border: none;
+	font-family: "Poppins", sans-serif;
+	font-weight: normal;
+	font-size: 17px;
 }
 
 .order-button {
-  background-color: #0464fc;
-  font-family: "Poppins", sans-serif;
-  font-weight: normal;
-  font-size: 17px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-left: 10px;
-  height: 28px;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
+	background-color: #0464fc;
+	font-family: "Poppins", sans-serif;
+	font-weight: normal;
+	font-size: 17px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-left: 10px;
+	height: 28px;
+	color: white;
+	border-radius: 12px;
+	border: none;
+	cursor: pointer;
 }
 
 .order-button:hover {
-  background-color: #054fc7;
-  font-family: "Poppins", sans-serif;
-  font-weight: normal;
-  font-size: 17px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-left: 10px;
-  height: 28px;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
+	background-color: #054fc7;
+	font-family: "Poppins", sans-serif;
+	font-weight: normal;
+	font-size: 17px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-left: 10px;
+	height: 28px;
+	color: white;
+	border-radius: 12px;
+	border: none;
+	cursor: pointer;
 }
 
 .invoice-main-container {
-  position: absolute;
-  margin: auto;
-  width: 700px;
-  height: 850px;
-  right: 80px;
-  left: 80px;
-  top: 40px;
-  background: rgba(255, 255, 255, 0.51);
-  border-radius: 30px;
+	position: absolute;
+	margin: auto;
+	width: 700px;
+	height: 850px;
+	right: 80px;
+	left: 80px;
+	top: 40px;
+	background: rgba(255, 255, 255, 0.51);
+	border-radius: 30px;
 }
 
-.order-details-container1{
-  position: absolute;
-  width: 294px;
-  height: 100px;
-  left: 40px;
-  top: 140px;
-  background: rgba(255, 255, 255, 0.68);
-  border-radius: 30px;
+.order-details-container1 {
+	position: absolute;
+	width: 294px;
+	height: 100px;
+	left: 40px;
+	top: 140px;
+	background: rgba(255, 255, 255, 0.68);
+	border-radius: 30px;
 }
 
-.order-details-container2{
-  position: absolute;
-  width: 294px;
-  height: 100px;
-  right: 40px;
-  top: 140px;
-  background: rgba(255, 255, 255, 0.68);
-  border-radius: 30px;
+.order-details-container2 {
+	position: absolute;
+	width: 294px;
+	height: 100px;
+	right: 40px;
+	top: 140px;
+	background: rgba(255, 255, 255, 0.68);
+	border-radius: 30px;
 }
 
 .back-icon {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  left: 40px;
-  top: 37px;
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	left: 40px;
+	top: 37px;
 }
 
 .create-invoice-title {
-  width: 100%;
-  left: auto;
-  margin-top: 40px;
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 37px;
-  line-height: 36px;
-  text-align: center;
-  color: #125465;
+	width: 100%;
+	left: auto;
+	margin-top: 40px;
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 37px;
+	line-height: 36px;
+	text-align: center;
+	color: #125465;
 }
 
 .invoice-details-container1 {
-  position: absolute;
-  width: 190px;
-  height: 100px;
-  left: 40px;
-  top: 140px;
-  background: rgba(255, 255, 255, 0.68);
-  border-radius: 30px;
+	position: absolute;
+	width: 190px;
+	height: 100px;
+	left: 40px;
+	top: 140px;
+	background: rgba(255, 255, 255, 0.68);
+	border-radius: 30px;
 }
 
 .invoice-details-container2 {
-  position: absolute;
-  width: 190px;
-  height: 100px;
-  left: 255px;
-  top: 140px;
-  background: rgba(255, 255, 255, 0.68);
-  border-radius: 30px;
+	position: absolute;
+	width: 190px;
+	height: 100px;
+	left: 255px;
+	top: 140px;
+	background: rgba(255, 255, 255, 0.68);
+	border-radius: 30px;
 }
 
 .invoice-details-container3 {
-  position: absolute;
-  width: 190px;
-  height: 100px;
-  right: 40px;
-  top: 140px;
-  background: rgba(255, 255, 255, 0.68);
-  border-radius: 30px;
+	position: absolute;
+	width: 190px;
+	height: 100px;
+	right: 40px;
+	top: 140px;
+	background: rgba(255, 255, 255, 0.68);
+	border-radius: 30px;
 }
 
 .invoice-details-title {
-  position: absolute;
-  left: 30px;
-  right: 30px;
-  top: 15px;
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 25px;
-  line-height: 37px;
-  text-align: center;
-  color: #125465;
+	position: absolute;
+	left: 30px;
+	right: 30px;
+	top: 15px;
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 25px;
+	line-height: 37px;
+	text-align: center;
+	color: #125465;
 }
 
 .invoice-details-id {
-  position: absolute;
-  left: 30px;
-  right: 30px;
-  top: 55px;
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 25px;
-  line-height: 37px;
-  text-align: center;
-  color: #125465;
+	position: absolute;
+	left: 30px;
+	right: 30px;
+	top: 55px;
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 25px;
+	line-height: 37px;
+	text-align: center;
+	color: #125465;
 }
 
 .invoice-medicine-form-title {
-  position: absolute;
-  left: 40px;
-  top: 280px;
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 36px;
-  text-align: center;
-  color: #125465;
+	position: absolute;
+	left: 40px;
+	top: 280px;
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 36px;
+	text-align: center;
+	color: #125465;
 }
 
 .invoice-quantity-form-title {
-  position: absolute;
-  left: 395px;
-  top: 280px;
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 36px;
-  text-align: center;
-  color: #125465;
+	position: absolute;
+	left: 395px;
+	top: 280px;
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 36px;
+	text-align: center;
+	color: #125465;
 }
 
 .invoice-price-form-title {
-  position: absolute;
-  left: 510px;
-  top: 280px;
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 36px;
-  text-align: center;
-  color: #125465;
+	position: absolute;
+	left: 510px;
+	top: 280px;
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 36px;
+	text-align: center;
+	color: #125465;
 }
 
 .invoice-medicine-form {
-  padding-left: 15px;
-  position: absolute;
-  width: 340px;
-  height: 35px;
-  left: 40px;
-  top: 325px;
-  outline: none;
-  border: none;
-  border-radius: 15px;
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 15px;
+	padding-left: 15px;
+	position: absolute;
+	width: 340px;
+	height: 35px;
+	left: 40px;
+	top: 325px;
+	outline: none;
+	border: none;
+	border-radius: 15px;
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
 }
 
 .invoice-quantity-form {
-  padding-left: 15px;
-  position: absolute;
-  width: 100px;
-  height: 35px;
-  left: 395px;
-  top: 325px;
-  outline: none;
-  border: none;
-  border-radius: 15px;
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 15px;
+	padding-left: 15px;
+	position: absolute;
+	width: 100px;
+	height: 35px;
+	left: 395px;
+	top: 325px;
+	outline: none;
+	border: none;
+	border-radius: 15px;
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
 }
 
 .invoice-price-form {
-  padding-left: 15px;
-  position: absolute;
-  width: 100px;
-  height: 35px;
-  left: 510px;
-  top: 325px;
-  outline: none;
-  border: none;
-  border-radius: 15px;
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 15px;
+	padding-left: 15px;
+	position: absolute;
+	width: 100px;
+	height: 35px;
+	left: 510px;
+	top: 325px;
+	outline: none;
+	border: none;
+	border-radius: 15px;
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
 }
 
 .add-icon {
-  position: absolute;
-  width: 35px;
-  height: 35px;
-  right: 40px;
-  top: 326px;
+	position: absolute;
+	width: 35px;
+	height: 35px;
+	right: 40px;
+	top: 326px;
 }
 
 .invoice-medicine-list-container {
-  position: absolute;
-  width: 620px;
-  display: flex;
-  justify-content: center;
-  height: 300px;
-  left: 40px;
-  top: 410px;
-  background: rgba(255, 255, 255, 0.51);
-  border-radius: 30px;
-  padding: 20px;
+	position: absolute;
+	width: 620px;
+	display: flex;
+	justify-content: center;
+	height: 300px;
+	left: 40px;
+	top: 410px;
+	background: rgba(255, 255, 255, 0.51);
+	border-radius: 30px;
+	padding: 20px;
 }
 
 .invoice-medicine-list-scroll {
-  position: absolute;
-  width: 600px;
-  overflow-y: scroll;
-  max-height: 263px;
+	position: absolute;
+	width: 600px;
+	overflow-y: scroll;
+	max-height: 263px;
 }
 
 .invoice-medicine-list {
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 15px;
-  color: rgb(0, 0, 0);
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
+	color: rgb(0, 0, 0);
 }
 
 .invoice-medicine-list-name {
-  width: 360px;
+	width: 360px;
 }
 
 .invoice-medicine-list-qty {
-  width: 80px;
+	width: 80px;
 }
 
 .invoice-medicine-list-price {
-  width: 80px;
+	width: 80px;
 }
 .cancel-icon {
-  padding-top: 5px;
-  width: 20px;
-  height: 25px;
+	padding-top: 5px;
+	width: 20px;
+	height: 25px;
 }
 
 .invoice-submit-button {
-  width: 620px;
-  background-color: #0464fc;
-  font-family: "Poppins", sans-serif;
-  font-weight: normal;
-  font-size: 17px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-left: 40px;
-  margin-top: 690px;
-  height: 30px;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
+	width: 620px;
+	background-color: #0464fc;
+	font-family: "Poppins", sans-serif;
+	font-weight: normal;
+	font-size: 17px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-left: 40px;
+	margin-top: 690px;
+	height: 30px;
+	color: white;
+	border-radius: 12px;
+	border: none;
+	cursor: pointer;
 }
 
 .invoice-submit-button:hover {
-  width: 620px;
-  background-color: #125465;
-  font-family: "Poppins", sans-serif;
-  font-weight: normal;
-  font-size: 17px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-left: 40px;
-  margin-top: 690px;
-  height: 30px;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
+	width: 620px;
+	background-color: #125465;
+	font-family: "Poppins", sans-serif;
+	font-weight: normal;
+	font-size: 17px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-left: 40px;
+	margin-top: 690px;
+	height: 30px;
+	color: white;
+	border-radius: 12px;
+	border: none;
+	cursor: pointer;
 }
 
 .invoice-submit-button:disabled {
-  width: 620px;
-  background-color: #125465;
-  font-family: "Poppins", sans-serif;
-  font-weight: normal;
-  font-size: 17px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-left: 40px;
-  margin-top: 690px;
-  height: 30px;
-  border-radius: 12px;
-  border: none;
-  cursor: default;
+	width: 620px;
+	background-color: #125465;
+	font-family: "Poppins", sans-serif;
+	font-weight: normal;
+	font-size: 17px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-left: 40px;
+	margin-top: 690px;
+	color: white;
+	height: 30px;
+	border-radius: 12px;
+	border: none;
+	cursor: default;
 }
 
 .order-view-desc {
-  width: 620px;
-  height: 100px;
-  margin-left: 40px;
-  margin-top: 245px;
-  padding: 12px 20px;
-  display: inline-block;
-  background: rgba(255, 255, 255, 0.51);
-  border-radius: 30px;
-  border: 0px;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 15px;
-  resize: none;
+	width: 620px;
+	height: 100px;
+	margin-left: 40px;
+	margin-top: 245px;
+	padding: 12px 20px;
+	display: inline-block;
+	background: rgba(255, 255, 255, 0.51);
+	border-radius: 30px;
+	border: 0px;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
+	resize: none;
 }
 
 .prescription-image {
-  height: 350px;
-  margin: auto;
-  width: fit-content;
+	height: 350px;
+	margin: auto;
+	width: fit-content;
 }
 
 .prescription-image-container {
-  height: 350px;
-  width: fit-content;
-  margin: 20px 210px;
+	height: 350px;
+	width: fit-content;
+	margin: 20px 210px;
 }
 
 .pre-main-container {
-  position: absolute;
-  margin: auto;
-  width: 700px;
-  height: 900px;
-  right: 80px;
-  left: 80px;
-  top: 40px;
-  background: rgba(255, 255, 255, 0.51);
-  border-radius: 30px;
+	position: absolute;
+	margin: auto;
+	width: 700px;
+	height: 900px;
+	right: 80px;
+	left: 80px;
+	top: 40px;
+	background: rgba(255, 255, 255, 0.51);
+	border-radius: 30px;
 }
 
 .pre-submit-button {
-  width: 620px;
-  background-color: #0464fc;
-  font-family: "Poppins", sans-serif;
-  font-weight: normal;
-  font-size: 17px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-left: 40px;
-  margin-top: 20px;
-  height: 30px;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
+	width: 620px;
+	background-color: #0464fc;
+	font-family: "Poppins", sans-serif;
+	font-weight: normal;
+	font-size: 17px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-left: 40px;
+	margin-top: 20px;
+	height: 30px;
+	color: white;
+	border-radius: 12px;
+	border: none;
+	cursor: pointer;
 }
 
 .pre-submit-button:hover {
-  width: 620px;
-  background-color: #125465;
-  font-family: "Poppins", sans-serif;
-  font-weight: normal;
-  font-size: 17px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-left: 40px;
-  margin-top: 20px;
-  height: 30px;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
+	width: 620px;
+	background-color: #125465;
+	font-family: "Poppins", sans-serif;
+	font-weight: normal;
+	font-size: 17px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-left: 40px;
+	margin-top: 20px;
+	height: 30px;
+	color: white;
+	border-radius: 12px;
+	border: none;
+	cursor: pointer;
 }
 
 .invoice-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 92%;
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 17px;
-  margin-left: 20px;
-  margin-right: auto;
-  max-height: 300px;
-  margin-top: 160px;
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 92%;
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 17px;
+	margin-left: 20px;
+	margin-right: auto;
+	max-height: 300px;
+	margin-top: 30px;
 }
 
 .invoice-table td {
-  border: 10px;
-  padding-top: 25px;
-  padding-left: 31px;
-  padding-right: 38px;
-  font-weight: normal;
-  width: 92px;
-  color: rgb(0, 0, 0);
+	border: 10px;
+	padding-top: 25px;
+	padding-left: 31px;
+	padding-right: 38px;
+	font-weight: normal;
+	width: 110px;
+	color: rgb(0, 0, 0);
 }
 
 .iid {
-  padding-left: 10px;
+	padding-left: 10px;
 }
 
 .inic {
-  padding-left: 92px;
+	padding-left: 92px;
 }
 
 .iamount {
-  padding-left: 100px;
+	padding-left: 100px;
 }
 
 .iaction {
-  padding-left: 145px;
+	padding-left: 145px;
 }
 
 .flex-container-invoice-details {
-  display: flex;
-  flex-wrap: nowrap;
+	display: flex;
+	flex-wrap: nowrap;
 }
 
 .flex-container-invoice-details > div {
-  margin-left: 40px;
-  margin-top: 20px;
-  text-align: center;
-  line-height: 75px;
-  font-size: 30px;
-  width: 500px;
-  height: 80px;
-  background-color: rgba(255, 255, 255, 0.48);
-  border-radius: 30px;
+	margin-left: 40px;
+	margin-top: 20px;
+	text-align: center;
+	line-height: 75px;
+	font-size: 30px;
+	width: 500px;
+	height: 80px;
+	background-color: rgba(255, 255, 255, 0.48);
+	border-radius: 30px;
 }
 
 .view-invoice-details-title {
-  left: 30px;
-  right: 30px;
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 25px;
-  line-height: 37px;
-  text-align: center;
-  color: #125465;
+	left: 30px;
+	right: 30px;
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 25px;
+	line-height: 37px;
+	text-align: center;
+	color: #125465;
 }
 
 .view-invoice-details-id {
-  left: 30px;
-  right: 30px;
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 25px;
-  line-height: 37px;
-  text-align: center;
-  color: #125465;
+	left: 30px;
+	right: 30px;
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 25px;
+	line-height: 37px;
+	text-align: center;
+	color: #125465;
 }
 
 .flex-container-med-details {
-  margin-left: 40px;
-  margin-top: 0px;
-  text-align: center;
-  line-height: 75px;
-  font-size: 30px;
-  width: 93%;
-  height: 170px;
-  background-color: rgba(255, 255, 255, 0.48);
-  border-radius: 30px;
-}  
-
-
-.flex-container-med-details-inner{
-  width: 100%;
-  overflow-y: scroll;
-  height: 150px;
+	margin-left: 40px;
+	margin-top: 0px;
+	text-align: center;
+	line-height: 75px;
+	font-size: 30px;
+	width: 93%;
+	height: 170px;
+	background-color: rgba(255, 255, 255, 0.48);
+	border-radius: 30px;
 }
 
+.flex-container-view-med-details {
+	margin-left: 40px;
+	margin-top: 20px;
+	text-align: center;
+	line-height: 75px;
+	font-size: 30px;
+	width: 93%;
+	height: 200px;
+	background-color: rgba(255, 255, 255, 0.48);
+	border-radius: 30px;
+	overflow-y: scroll;
+}
+
+.flex-container-med-details-inner {
+	width: 100%;
+	overflow-y: scroll;
+	height: 150px;
+}
 
 .view-invoice-med-details {
-  display: flex;
-  flex-wrap: nowrap;
+	display: flex;
+	flex-wrap: nowrap;
 }
 
 .view-invoice-med-details > div {
-  border: 10px;
-  padding-left: 20px;
-  margin-left:100px;
-  margin-top:20px;
-  width: 250px;
-  height: 50px;
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 22px;
-  color: #125465;
+	border: 0px;
+	padding-left: 20px;
+	margin-left: 0px;
+	margin-top: 0px;
+	width: 250px;
+	height: 35px;
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 22px;
+	color: #125465;
 }
 
 .view-invoice-med > td {
-  margin-top: 0px;
-  padding-left: 20px;
-  width: 250px;
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  color: black;
+	margin-top: 0px;
+	padding-left: 20px;
+	width: 250px;
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 20px;
+	color: black;
 }
 
 .view-invoice-med > td > p {
-  height: 32px;
-  /* text-align: left;
+	height: 32px;
+	/* text-align: left;
   margin-left: 65px; */
 }
 
 .delete-invoice-container {
-  position: absolute;
-  margin: auto;
-  width: 1120px;
-  height: 560px;
-  right: 80px;
-  left: 80px;
-  top: 80px;
-  bottom: 80px;
-  background: rgba(255, 255, 255, 0.51);
-  border-radius: 40px;
+	position: absolute;
+	margin: auto;
+	width: 1120px;
+	height: 560px;
+	right: 80px;
+	left: 80px;
+	top: 80px;
+	bottom: 80px;
+	background: rgba(255, 255, 255, 0.51);
+	border-radius: 40px;
 }
 
 .flex-container-med-details-delete {
-  margin-left: 40px;
-  margin-top: 20px;
-  text-align: center;
-  line-height: 75px;
-  font-size: 30px;
-  width: 93%;
-  height: 180px;
-  background-color: rgba(255, 255, 255, 0.48);
-  border-radius: 30px;
-  overflow-y: scroll;
+	margin-left: 40px;
+	margin-top: 20px;
+	text-align: center;
+	line-height: 75px;
+	font-size: 30px;
+	width: 93%;
+	height: 180px;
+	background-color: rgba(255, 255, 255, 0.48);
+	border-radius: 30px;
+	overflow-y: scroll;
 }
 
 .invoice-delete-button {
-  width: 1040px;
-  height: 25px;
-  background-color: #0464fc;
-  font-family: "Poppins", sans-serif;
-  font-weight: normal;
-  font-size: 17px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-left: 40px;
-  margin-top: 15px;
-  height: 30px;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
+	width: 1040px;
+	height: 25px;
+	background-color: #0464fc;
+	font-family: "Poppins", sans-serif;
+	font-weight: normal;
+	font-size: 17px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-left: 40px;
+	margin-top: 15px;
+	height: 30px;
+	color: white;
+	border-radius: 12px;
+	border: none;
+	cursor: pointer;
 }
 
 .invoice-delete-button:hover {
-  width: 1040px;
-  height: 25px;
-  background-color: #125465;
-  font-family: "Poppins", sans-serif;
-  font-weight: normal;
-  font-size: 17px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-left: 40px;
-  margin-top: 30px;
-  height: 30px;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
+	width: 1040px;
+	height: 25px;
+	background-color: #125465;
+	font-family: "Poppins", sans-serif;
+	font-weight: normal;
+	font-size: 17px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-left: 40px;
+	margin-top: 15px;
+	height: 30px;
+	color: white;
+	border-radius: 12px;
+	border: none;
+	cursor: pointer;
 }
 
 .update-invoice-form > form > input[type="text"] {
-  padding-left: 15px;
-  width:  250px;
-  height: 35px;
-  left: 0px;
-  outline: none;
-  border: none;
-  border-radius: 15px;
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 15px;
-  border: unset;
-  margin: 10px;
+	padding-left: 15px;
+	width: 250px;
+	height: 35px;
+	left: 0px;
+	outline: none;
+	border: none;
+	border-radius: 15px;
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
+	border: unset;
+	margin: 10px;
 }
 
 .update-invoice-form > form > input[type="number"] {
-  padding-left: 15px;
-  width: 100px;
-  height: 35px;
-  left: 0px;
-  outline: none;
-  border: none;
-  border-radius: 15px;
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 15px;
-  border: unset;
-  margin: 10px;
+	padding-left: 15px;
+	width: 100px;
+	height: 35px;
+	left: 0px;
+	outline: none;
+	border: none;
+	border-radius: 15px;
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
+	border: unset;
+	margin: 10px;
 }
 
 .update-invoice-form > form > input[type="image"] {
-  margin: 12px 2px;
-  width: 30px;
-  height: 30px;
+	margin: 12px 2px;
+	width: 30px;
+	height: 30px;
 }
 
 .update-invoice-form > form {
-  display: flex;
+	display: flex;
 }
 
 .update-invoice-form {
-  display: flex;
-  flex-wrap: nowrap;
+	display: flex;
+	flex-wrap: nowrap;
 }
 
-.stock-table-head{
-  display: flex;
-  flex-wrap: nowrap;
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 92%;
-  height: fit-content;
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 17px;
-  margin-left: 10px;
-  max-height: 300px;
-  margin-top: 135px;
-  overflow-y: scroll;
+.stock-table-head {
+	display: flex;
+	flex-wrap: nowrap;
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 92%;
+	height: fit-content;
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 17px;
+	margin-left: 10px;
+	max-height: 300px;
+	margin-top: 135px;
+	overflow-y: scroll;
 }
 
-.stock-table-head tr th{
-  border: 10px;
-  padding-top: 25px;
-  font-weight: 500;
-  width: 180px;
-  height: fit-content;
-  color:#125465
+.stock-table-head1 {
+	border: 10px;
+	padding-top: 25px;
+	font-weight: 500;
+	width: 140px;
+	height: fit-content;
+	padding-left: 10px;
+	color: #125465;
 }
 
-.stock-table-head tr{
-  height: fit-content;
+.stock-table-head2 {
+	border: 10px;
+	padding-top: 25px;
+	font-weight: 500;
+	width: 190px;
+	height: fit-content;
+	padding-left: 0px;
+	padding-right: 0px;
+	color: #125465;
 }
 
-
-.stock-table-content{
-  display: flex;
-  flex-wrap: nowrap;
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 92%;
-  font-family: Poppins;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 17px;
-  margin-left: 10px;
+.stock-table-head3 {
+	border: 10px;
+	padding-top: 25px;
+	font-weight: 500;
+	width: 240px;
+	height: fit-content;
+	padding-left: 30px;
+	color: #125465;
 }
 
-.stock-table-content tr td{
-  padding-top: 25px;
-  font-family: Poppins;
-  font-style: normal;
-  font-size: 17px;
-  font-weight: 400;
-  width: 180px;
-  color:#000000;
-  text-align: center;
+.stock-table-head4 {
+	border: 10px;
+	padding-top: 25px;
+	font-weight: 500;
+	width: 150px;
+	height: fit-content;
+	padding-left: 20px;
+	color: #125465;
+}
+
+.stock-table-head5 {
+	border: 10px;
+	padding-top: 25px;
+	font-weight: 500;
+	width: 210px;
+	height: fit-content;
+	padding-left: 0px;
+	color: #125465;
+}
+
+.stock-table-head tr {
+	height: fit-content;
+}
+
+.stock-table-content {
+	display: flex;
+	flex-wrap: nowrap;
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 92%;
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 17px;
+	margin-left: 10px;
+}
+
+.stock-table-content tr td {
+	padding-top: 25px;
+	font-family: Poppins;
+	font-style: normal;
+	font-size: 17px;
+	font-weight: 400;
+	/* width: 180px; */
+	color: #000000;
+	text-align: center;
+	padding-right: 32px;
+	padding-left: 55px;
+}
+
+.history-table-head {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 92%;
+	height: fit-content;
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 17px;
+	margin-left: 10px;
+	margin-top: 140px;
+	max-height: 300px;
+	overflow-y: scroll;
+}
+
+.history-table-head tr th {
+	border: 10px;
+	padding-top: 25px;
+	font-weight: 500;
+	width: 220px;
+	height: fit-content;
+	padding-left: 0px;
+	padding-right: 20px;
+	color: #125465;
+}
+
+.history-table-content {
+	flex-wrap: nowrap;
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 92%;
+	font-family: Poppins;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 17px;
+	margin-left: 10px;
+}
+
+.history-table-content td {
+	padding-top: 25px;
+	font-family: Poppins;
+	font-style: normal;
+	font-size: 17px;
+	font-weight: 400;
+	width: 220px;
+	color: #000000;
+	text-align: center;
+}
+
+.report-button {
+	background-color: #0464fc;
+	font-family: "Poppins", sans-serif;
+	font-weight: normal;
+	font-size: 17px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-left: 405px;
+	margin-top: 104px;
+	height: 28px;
+	color: white;
+	border-radius: 12px;
+	border: none;
+	cursor: pointer;
+}
+
+.report-button:hover {
+	background-color: #054fc7;
+	font-family: "Poppins", sans-serif;
+	font-weight: normal;
+	font-size: 17px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-left: 405px;
+	margin-top: 104px;
+	height: 28px;
+	color: white;
+	border-radius: 12px;
+	border: none;
+	cursor: pointer;
+}
+
+.from-dropdown {
+	padding-left: 20px;
+	padding-top: 35px;
+	width: 170px;
+	height: 128px;
+	border-radius: 15px;
+	margin-left: 95px;
+	margin-top: 90px;
+	border: none;
+	font-family: "Poppins", sans-serif;
+	font-weight: normal;
+	font-size: 19px;
+}
+
+.to-dropdown {
+	padding-left: 20px;
+	padding-top: 35px;
+	width: 170px;
+	height: 128px;
+	border-radius: 15px;
+	overflow: hidden;
+	margin-left: 40px;
+	border: none;
+	font-family: "Poppins", sans-serif;
+	font-weight: normal;
+	font-size: 20px;
+}
+
+.year-dropdown {
+	padding-left: 20px;
+	padding-top: 35px;
+	width: 170px;
+	height: 128px;
+	border-radius: 15px;
+	margin-left: 40px;
+	border: none;
+	font-family: "Poppins", sans-serif;
+	font-weight: normal;
+	font-size: 20px;
+}
+
+.from-title {
+	position: absolute;
+	/* width: 100%; */
+	left: 117px;
+	top: 180px;
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 36px;
+	text-align: center;
+	color: #125465;
+}
+
+.to-title {
+	position: absolute;
+	width: 100%;
+	left: -58px;
+	top: 180px;
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 36px;
+	text-align: center;
+	color: #125465;
+}
+
+.year-title {
+	position: absolute;
+	width: 100%;
+	left: 163px;
+	top: 180px;
+	font-family: "Poppins", sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 36px;
+	text-align: center;
+	color: #125465;
+}
+
+.generate-report-button {
+	background-color: #0464fc;
+	font-family: "Poppins", sans-serif;
+	font-weight: normal;
+	font-size: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-left: 291px;
+	margin-top: 64px;
+	height: 38px;
+	color: white;
+	border-radius: 12px;
+	border: none;
+	cursor: pointer;
+}
+
+.generate-report-button:hover {
+	background-color: #054fc7;
+	font-family: "Poppins", sans-serif;
+	font-weight: normal;
+	font-size: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-left: 291px;
+	margin-top: 64px;
+	height: 38px;
+	color: white;
+	border-radius: 12px;
+	border: none;
+	cursor: pointer;
 }

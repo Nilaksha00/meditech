@@ -12,7 +12,7 @@ function Invoice() {
 		<div className="MainContainer">
 			<div className="containermini">
 				<img src={logo} className="logo" alt="meditech-logo" />
-				<Link to="/home">
+				<Link to="pharmacist/home">
 					<img src={user} className="user" alt="meditech-user-profile-icon" />
 				</Link>
 				<Sidebar />
@@ -20,6 +20,7 @@ function Invoice() {
 			</div>
 			<div className="content-container">
 				<p className="page-title">Invoice</p>
+				<Link to="/pharmacist/report"><button class="report-button">Report</button></Link>
 				<SearchBar />
 				<InvoiceList />
 			</div>

@@ -74,7 +74,7 @@ export default class View_Invoice extends Component {
 	render() {
 		return (
 			<div className="MainContainer">
-				<Link to="/invoice">
+				<Link to="/pharmacist/invoices">
 					<input
 						type="image"
 						src={back}
@@ -89,17 +89,17 @@ export default class View_Invoice extends Component {
 					style={{ marginTop: "20px" }}
 				>
 					<div>
-						<p className="view-invoice-details-title">order ID</p>
+						<p className="view-invoice-details-title">Order ID</p>
 						<p className="view-invoice-details-id">{this.state.oid}</p>
 					</div>
 					<div>
-						<p className="view-invoice-details-title">invoice ID</p>
+						<p className="view-invoice-details-title">Invoice ID</p>
 						<p className="view-invoice-details-id">{this.state.iid}</p>
 					</div>
 				</div>
 				<div class="flex-container-invoice-details">
 					<div>
-						<p className="view-invoice-details-title">date</p>
+						<p className="view-invoice-details-title">Date</p>
 						<p className="view-invoice-details-id">{this.state.date}</p>
 					</div>
 					<div>
@@ -107,22 +107,20 @@ export default class View_Invoice extends Component {
 						<p className="view-invoice-details-id">{this.state.amount}</p>
 					</div>
 				</div>
-				<div class="view-invoice-med-details">
-					<div>
-						<p>medicine</p>
+				<div class="flex-container-view-med-details">
+					<div class="view-invoice-med-details">
+						<div>
+							<p>Medicine</p>
+						</div>
+						<div />
+						<div>
+							<p>Quantity</p>
+						</div>
+						<div>
+							<p>Total</p>
+						</div>
 					</div>
-					<div />
-					<div>
-						<p>quantity</p>
-					</div>
-					<div>
-						<p>total</p>
-					</div>
-				</div>
-				<div class="flex-container-med-details">
-					<div className="flex-container-med-details-inner">
-						{this.medList()}
-					</div>
+					{this.medList()}
 				</div>
 			</div>
 		);

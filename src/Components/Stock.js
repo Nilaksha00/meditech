@@ -42,12 +42,13 @@ export default class Stock extends Component {
 		});
 	}
 
-	render() {
+
+					render() {
 		return (
 			<div className="MainContainer">
 				<div className="containermini">
 					<img src={logo} className="logo" alt="meditech-logo" />
-					<Link to="/home">
+					<Link to="/pharmacist/home">
 						<img src={user} className="user" alt="meditech-user-profile-icon" />
 					</Link>
 					<Sidebar />
@@ -59,14 +60,14 @@ export default class Stock extends Component {
 					<table className="stock-table-head">
 						<thead>
 							<tr>
-								<th>ID</th>
-								<th>bio name</th>
-								<th>medicine</th>
-								<th>quantity</th>
-								<th>unit price</th>
+								<th className="stock-table-head1">Stock ID</th>
+								<th className="stock-table-head2">Bio name</th>
+								<th className="stock-table-head3">Medicine name</th>
+								<th className="stock-table-head4">Quantity</th>
+								<th className="stock-table-head5">Unit price</th>
 							</tr>
 						</thead>
-					</table>
+						</table>
 					<div className="stock-table-content">{this.stockList()}</div>
 				</div>
 			</div>

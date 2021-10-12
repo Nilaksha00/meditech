@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import back from "../Images/back.png";
 import add from "../Images/add_icon.png";
 import UpdateInvoiceMed from "./updateInvoiceMed";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import axios from "./axios";
 
 export default class UpdateInvoice extends Component {
@@ -16,7 +18,7 @@ export default class UpdateInvoice extends Component {
 			name: "",
 			qty: "",
 			price: "",
-			tot: "",
+			isUpdated: 0,
 			med: [],
 		};
 	}
@@ -96,6 +98,24 @@ export default class UpdateInvoice extends Component {
 		});
 	};
 
+	handleSubmitUpdate = (e) => {
+		e.preventDefault();
+
+		const invoice = {
+			invoiceID: this.state.iid,
+			total: this.medTot(),
+		};
+
+		axios
+			.patch("/invoice/", invoice)
+			.then((res) => console.log(res.data))
+			.catch(function (error) {
+				console.log(error);
+			});
+
+			this.setState({ isUpdated: 1 });
+	};
+
 	medList() {
 		return this.state.med.map(function (currentMed, i) {
 			return <UpdateInvoiceMed medicine={currentMed} key={i} />;
@@ -111,10 +131,28 @@ export default class UpdateInvoice extends Component {
 	}
 
 	render() {
+		if (this.state.isUpdated === 1) {
+			toast.success("Invoice updated successfully");
+			setTimeout(() => {
+				this.props.history.push("/pharmacist/invoices");
+			}, 2000);
+		}
 		return (
 			<div style={{ height: "950px" }}>
+				<ToastContainer
+					position="top-center"
+					autoClose={4000}
+					hideProgressBar={true}
+					newestOnTop={false}
+					closeOnClick
+					rtl={false}
+					pauseOnFocusLoss
+					draggable
+					limit={1}
+					pauseOnHover
+				/>
 				<div className="invoice-main-container">
-					<Link to="/invoice">
+					<Link to="/pharmacist/invoices">
 						<input
 							type="image"
 							src={back}
@@ -139,9 +177,9 @@ export default class UpdateInvoice extends Component {
 						<p className="invoice-details-id">{this.medTot()} </p>
 					</div>
 
-					<p className="invoice-medicine-form-title">medicine</p>
-					<p className="invoice-quantity-form-title">quantity</p>
-					<p className="invoice-price-form-title">price</p>
+					<p className="invoice-medicine-form-title">Medicine</p>
+					<p className="invoice-quantity-form-title">Quantity</p>
+					<p className="invoice-price-form-title">Price</p>
 
 					<form>
 						<input
@@ -178,9 +216,12 @@ export default class UpdateInvoice extends Component {
 						<div className="invoice-medicine-list-scroll">{this.medList()}</div>
 					</div>
 
-					<Link to="/invoice">
-						<button className="invoice-submit-button">update</button>
-					</Link>
+					<button
+						className="invoice-submit-button"
+						onClick={this.handleSubmitUpdate}
+					>
+						update
+					</button>
 				</div>
 			</div>
 		);

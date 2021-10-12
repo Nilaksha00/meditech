@@ -1,22 +1,18 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import back from "../Images/back.png";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import axios from "./axios";
 import dateFormat from "dateformat";
 
 const Med = (props) => {
 	return (
 		<tr key={props.medicine.id} className="view-invoice-med">
-			<td>
-				<p>{props.medicine.med_name}</p>
-			</td>{" "}
+			<td><p>{props.medicine.med_name}</p></td>{" "}
 			<td></td>
-			<td>
-				<p>{props.medicine.quantity}</p>
-			</td>
-			<td>
-				<p>{props.medicine.total}</p>
-			</td>
+			<td><p>{props.medicine.quantity}</p></td>
+			<td><p>{props.medicine.total}</p></td>
 		</tr>
 	);
 };
@@ -26,6 +22,7 @@ export default class Delete_Invoice extends Component {
 		super(props);
 		this.state = {
 			iid: "",
+			isDeleted: 0,
 			oid: "",
 			date: "",
 			amount: "",
@@ -68,16 +65,48 @@ export default class Delete_Invoice extends Component {
 
 	deleteInvoice = (e) => {
 		e.preventDefault();
-
 		const id = this.props.match.params.id;
 
-		axios.delete("/invoice/" + id);
+		axios
+			.delete("/invoice/" + id)
+			.then((response) => {
+				axios
+					.delete("/invoice/med/" + id)
+					.then((response) => {
+						console.log(response.data);
+					})
+					.catch(function (error) {
+						console.log(error);
+					});
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
+		this.setState({ isDeleted: 1 });
 	};
 
 	render() {
+		if (this.state.isDeleted === 1) {
+			toast.success("Invoice deleted successfully");
+			setTimeout(() => {
+				this.props.history.push("/pharmacist/invoices");
+			}, 2000);
+		}
 		return (
 			<div className="delete-invoice-container">
-				<Link to="/invoice">
+				<ToastContainer
+					position="top-center"
+					autoClose={4000}
+					hideProgressBar={true}
+					newestOnTop={false}
+					closeOnClick
+					rtl={false}
+					pauseOnFocusLoss
+					draggable
+					limit={1}
+					pauseOnHover
+				/>
+				<Link to="/pharmacist/invoices">
 					<input
 						type="image"
 						src={back}
@@ -92,21 +121,21 @@ export default class Delete_Invoice extends Component {
 					style={{ marginTop: "20px" }}
 				>
 					<div>
-						<p className="view-invoice-details-title">order ID</p>
+						<p className="view-invoice-details-title">Order ID</p>
 						<p className="view-invoice-details-id">{this.state.oid}</p>
 					</div>
 					<div>
-						<p className="view-invoice-details-title">invoice ID</p>
+						<p className="view-invoice-details-title">Invoice ID</p>
 						<p className="view-invoice-details-id">{this.state.iid}</p>
 					</div>
 				</div>
 				<div class="flex-container-invoice-details">
 					<div>
-						<p className="view-invoice-details-title">date</p>
+						<p className="view-invoice-details-title">Date</p>
 						<p className="view-invoice-details-id">{this.state.date}</p>
 					</div>
 					<div>
-						<p className="view-invoice-details-title">amount</p>
+						<p className="view-invoice-details-title">Amount</p>
 						<p className="view-invoice-details-id">{this.state.amount}</p>
 					</div>
 				</div>
@@ -114,14 +143,14 @@ export default class Delete_Invoice extends Component {
 				<div class="flex-container-med-details-delete">
 					<div class="view-invoice-med-details">
 						<div>
-							<p>medicine</p>
+							<p>Medicine</p>
 						</div>
 						<div />
 						<div>
-							<p>quantity</p>
+							<p>Quantity</p>
 						</div>
 						<div>
-							<p>total</p>
+							<p>Total</p>
 						</div>
 					</div>
 					{this.medList()}

@@ -47,10 +47,13 @@ render(){
     const { id } = this.props.match.params;
 
     if(this.state.isAvailable===null){
-        this.props.history.push("/create-invoice/"+this.state.id);
+        this.props.history.push("/pharmacist/invoice/create/"+this.state.id);
     }else if(this.state.isAvailable.id===this.state.id){  
         toast.warning("Sorry! Invoice already created");    
-       // this.props.history.push("/invoice");
+        setTimeout(() => {
+            this.props.history.push('/pharmacist/invoices')
+          }, 2000);
+        //this.props.history.push("/invoice");
     }
 
     return (
@@ -69,7 +72,7 @@ render(){
 			/>
 
             <div className="pre-main-container">
-                <Link to = "/order"><input type="image" src={back} className="back-icon" alt="meditech-back-icon"/></Link>                           
+                <Link to = "/pharmacist/orders"><input type="image" src={back} className="back-icon" alt="meditech-back-icon"/></Link>                           
                 <p className="create-invoice-title">Prescription</p>
                 <div className="order-details-container1">
                     <p className="invoice-details-title">Order ID</p>  

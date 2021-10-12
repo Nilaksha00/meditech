@@ -10,16 +10,16 @@ const Invoice = (props) => {
 			<td> {props.inv.amount}</td>
 			<td style={{ display: "flex" }}>
 				<Link
-					to={"/view-invoice/" + props.inv.id}
+					to={"/pharmacist/invoice/view/" + props.inv.id}
 					style={{ textDecoration: "none" }}
 				>
 					<button className="order-button">view</button>
 				</Link>
-				<Link to={"/update/" + props.inv.id} style={{ textDecoration: "none" }}>
+				<Link to={"/pharmacist/invoice/update/" + props.inv.id} style={{ textDecoration: "none" }}>
 					<button className="order-button">update</button>
 				</Link>
 				<Link
-					to={"/delete-invoice/" + props.inv.id}
+					to={"/pharmacist/invoice/delete/" + props.inv.id}
 					style={{ textDecoration: "none" }}
 				>
 					<button className="order-button">delete</button>
@@ -57,13 +57,14 @@ export default class InvoiceList extends Component {
 			<table className="invoice-table">
 				<thead>
 					<tr>
-						<th className="iid">invoice ID</th>
+						<th className="iid">Invoice ID</th>
 						<th className="inic">NIC</th>
-						<th className="iamount">amount</th>
-						<th className="iaction">actions</th>
+						<th className="iamount">Amount</th>
+						<th className="iaction">Actions</th>
 					</tr>
 				</thead>
 				<div className="table-container">
+					
 					<div className="search-bar-container">{this.invoiceList()}</div>
 				</div>
 			</table>

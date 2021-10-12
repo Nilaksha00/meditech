@@ -29,7 +29,9 @@ class Home extends Component {
 	orderCount() {
 		let count = 0;
 		this.state.order.map(function (currentOrder, i) {
-			count = count + 1;
+			if (currentOrder.ph_status != "processing") {
+				count = count + 1;
+			}
 		});
 		return count;
 	}
@@ -39,7 +41,7 @@ class Home extends Component {
 			<div className="MainContainer">
 				<div className="containermini">
 					<img src={logo} className="logo" alt="meditech-logo" />
-					<Link to="/home">
+					<Link to="pharmacist/home">
 						<img src={user} className="user" alt="meditech-user-profile-icon" />
 					</Link>
 					<Sidebar />
@@ -56,7 +58,7 @@ class Home extends Component {
 						className="welcome-med-shadow"
 						alt="meditech-welcome-message-shadow"
 					/>
-					<p className="welcome-name">Hello Ervill Howell</p>
+					<p className="welcome-name">Hello Nilaksha</p>
 					<p className="welcome-desc">
 						may every step you make be filled with happiness
 					</p>

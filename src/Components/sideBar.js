@@ -8,7 +8,7 @@ function Sidebar() {
 			<ul className="SidebarList">
 				<NavLink
 					style={{ textDecoration: "none" }}
-					to="/home"
+					to="/pharmacist/home"
 					activeClassName="active-nav"
 					className="row"
 				>
@@ -16,7 +16,7 @@ function Sidebar() {
 				</NavLink>
 				<NavLink
 					style={{ textDecoration: "none" }}
-					to="/order"
+					to="/pharmacist/orders"
 					activeClassName="active-nav"
 					className="row"
 				>
@@ -24,7 +24,7 @@ function Sidebar() {
 				</NavLink>
 				<NavLink
 					style={{ textDecoration: "none" }}
-					to="/stock"
+					to="/pharmacist/stock"
 					activeClassName="active-nav"
 					className="row"
 				>
@@ -32,7 +32,7 @@ function Sidebar() {
 				</NavLink>
 				<NavLink
 					style={{ textDecoration: "none" }}
-					to="/invoice"
+					to="/pharmacist/invoices"
 					activeClassName="active-nav"
 					className="row"
 				>
@@ -40,7 +40,7 @@ function Sidebar() {
 				</NavLink>
 				<NavLink
 					style={{ textDecoration: "none" }}
-					to="/history"
+					to="/pharmacist/history"
 					activeClassName="active-nav"
 					className="row"
 				>
@@ -48,7 +48,7 @@ function Sidebar() {
 				</NavLink>
 				<NavLink
 					style={{ textDecoration: "none" }}
-					to="/leaves"
+					to="/pharmacist/leaves"
 					activeClassName="active-nav"
 					className="row"
 				>
@@ -56,7 +56,7 @@ function Sidebar() {
 				</NavLink>
 				<NavLink
 					style={{ textDecoration: "none" }}
-					to="/salary"
+					to="/pharmacist/salary"
 					activeClassName="active-nav"
 					className="row"
 				>

@@ -16,19 +16,12 @@ export default class UpdateInvoiceMed extends Component {
 			isDisabled: false,
 		};
 
-		this.handleChangeName = this.handleChangeName.bind(this);
 		this.handleChangeQty = this.handleChangeQty.bind(this);
 		this.handleChangePrice = this.handleChangePrice.bind(this);
 		this.handleUpdate = this.handleUpdate.bind(this);
 	}
 
 	//handles changes in text fields
-	handleChangeName = (e) => {
-		this.setState({
-			name: e.target.value,
-		});
-	};
-
 	handleChangeQty = (e) => {
 		this.setState({
 			qty: e.target.value,
@@ -60,6 +53,7 @@ export default class UpdateInvoiceMed extends Component {
 			.catch(function (error) {
 				console.log(error);
 			});
+		window.location.reload(false);
 	};
 
 	//handles deleted records
@@ -81,6 +75,7 @@ export default class UpdateInvoiceMed extends Component {
 			.catch(function (error) {
 				console.log(error.response.data);
 			});
+		window.location.reload(false);
 	};
 
 	render() {
@@ -92,7 +87,7 @@ export default class UpdateInvoiceMed extends Component {
 						value={this.state.name}
 						name="medName"
 						disabled={this.state.isDisabled}
-						onChange={this.handleChangeName}
+						readOnly
 					/>
 					<input
 						type="number"

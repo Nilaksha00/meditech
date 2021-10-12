@@ -169,7 +169,7 @@ class Create_Invoice extends Component {
 				.post("/invoice", invoice)
 				.then((res) => console.log(res.data))
 				.catch("Cannot create invoice");
-			window.location.replace("http://localhost:3000/invoice");
+			window.location.replace("http://localhost:3000/pharmacist/invoices");
 		} else {
 			toast.warning("Invoice cannot be empty");
 		}
@@ -195,7 +195,7 @@ class Create_Invoice extends Component {
 					pauseOnHover
 				/>
 				<div className="invoice-main-container">
-					<Link to={"/view-order/" + this.state.id}>
+					<Link to={"/pharmacist/order/" + this.state.id}>
 						<input
 							type="image"
 							src={back}
@@ -217,9 +217,9 @@ class Create_Invoice extends Component {
 						<p className="invoice-details-id">{this.medTot()}</p>
 					</div>
 
-					<p className="invoice-medicine-form-title">medicine</p>
-					<p className="invoice-quantity-form-title">quantity</p>
-					<p className="invoice-price-form-title">price</p>
+					<p className="invoice-medicine-form-title">Medicine</p>
+					<p className="invoice-quantity-form-title">Quantity</p>
+					<p className="invoice-price-form-title">Price</p>
 
 					<form>
 						<input
